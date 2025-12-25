@@ -1,0 +1,664 @@
+<!DOCTYPE html>
+<html lang="es"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>VitalityFlow - Combined Sales Page</title>
+<!-- Preconnect para domínios externos -->
+<link rel="preconnect" href="https://cdn.tailwindcss.com"/>
+<link rel="preconnect" href="https://fast.wistia.com"/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link rel="dns-prefetch" href="https://connect.facebook.net"/>
+<link rel="dns-prefetch" href="https://www.facebook.com"/>
+<!-- Meta Pixel Code (carregado após DOM) -->
+<script>
+(function() {
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', loadPixel);
+  } else {
+    setTimeout(loadPixel, 100);
+  }
+  function loadPixel() {
+    !function(f,b,e,v,n,t,s)
+    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+    n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];
+    s.parentNode.insertBefore(t,s)}(window, document,'script',
+    'https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', '1421388109491995');
+    fbq('track', 'PageView');
+  }
+})();
+</script>
+<noscript><img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=1421388109491995&ev=PageView&noscript=1"
+/></noscript>
+<!-- End Meta Pixel Code -->
+<!-- Tailwind CSS carregado após DOM (não bloqueia renderização) -->
+<script>
+(function() {
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', loadTailwind);
+  } else {
+    loadTailwind();
+  }
+  function loadTailwind() {
+    const script = document.createElement('script');
+    script.src = 'https://cdn.tailwindcss.com?plugins=forms,typography';
+    document.head.appendChild(script);
+  }
+})();
+</script>
+<!-- Wistia carregado sob demanda (não bloqueia inicial) -->
+<script>
+(function() {
+  let wistiaLoaded = false;
+  function loadWistia() {
+    if (wistiaLoaded) return;
+    wistiaLoaded = true;
+    const playerScript = document.createElement('script');
+    playerScript.src = 'https://fast.wistia.com/player.js';
+    playerScript.async = true;
+    document.head.appendChild(playerScript);
+    const embedScript = document.createElement('script');
+    embedScript.src = 'https://fast.wistia.com/embed/9dq5h4uqnm.js';
+    embedScript.async = true;
+    embedScript.type = 'module';
+    document.head.appendChild(embedScript);
+  }
+  // Carrega após 500ms ou na primeira interação
+  setTimeout(loadWistia, 500);
+  ['scroll', 'mousemove', 'touchstart'].forEach(function(event) {
+    window.addEventListener(event, loadWistia, { once: true, passive: true });
+  });
+})();
+</script>
+<!-- Google Fonts carregadas assincronamente -->
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;family=Montserrat:wght@500;600;700;900&amp;family=Poppins:wght@400;500;600;700&amp;family=Roboto:wght@400;500;700&amp;display=swap" rel="stylesheet" media="print" onload="this.media='all'"/>
+<noscript><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;family=Montserrat:wght@500;600;700;900&amp;family=Poppins:wght@400;500;600;700&amp;family=Roboto:wght@400;500;700&amp;display=swap" rel="stylesheet"/></noscript>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet" media="print" onload="this.media='all'"/>
+<noscript><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/></noscript>
+<script>
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              primary: "#ec2768", // Vibrant pink from screenshots
+              secondary: "#fdf2f6", // Very light pink background
+              "secondary-dark": "#3d081b", // Dark version for light pink bg
+              "background-light": "#f9fafb", // Default light bg
+              "background-dark": "#18181b", // Default dark bg
+              "card-light": "#ffffff",
+              "card-dark": "#27272a",
+              "text-main-light": "#1f2937",
+              "text-main-dark": "#f3f4f6",
+              "text-sub-light": "#4b5563",
+              "text-sub-dark": "#9ca3af",
+            },
+            fontFamily: {
+              sans: ["Inter", "sans-serif"],
+              display: ["Poppins", "sans-serif"],
+              montserrat: ["Montserrat", "sans-serif"],
+              roboto: ["Roboto", "sans-serif"],
+            },
+            borderRadius: {
+              DEFAULT: "0.75rem", // 12px
+              xl: "1rem", // 16px
+              "2xl": "1.5rem", // 24px
+            },
+          },
+        },
+      };
+    </script>
+<style>
+        @keyframes pulse-ring {
+            0% { transform: scale(0.8); box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.7); }
+            70% { transform: scale(1); box-shadow: 0 0 0 10px rgba(255, 255, 255, 0); }
+            100% { transform: scale(0.8); box-shadow: 0 0 0 0 rgba(255, 255, 255, 0); }
+        }
+        .play-btn-pulse {
+            animation: pulse-ring 2s infinite;
+        }
+        .btn-pulse-strong {
+            animation: pulse-strong 2s infinite;
+        }
+        @keyframes pulse-strong {
+            0% { transform: scale(1); box-shadow: 0 0 0 0 rgba(233, 30, 99, 0.7); }
+            50% { transform: scale(1.02); box-shadow: 0 0 0 10px rgba(233, 30, 99, 0); }
+            100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(233, 30, 99, 0); }
+        }
+        body {
+            min-height: max(884px, 100dvh);
+        }
+        .scrollbar-hide::-webkit-scrollbar {
+            display: none;
+        }
+        .scrollbar-hide {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+        /* Fallback de fontes para evitar FOIT */
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+        }
+        /* Aplica fontes quando carregarem */
+        .fonts-loaded body {
+            font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+        }
+        .fonts-loaded h1, .fonts-loaded h2, .fonts-loaded h3 {
+            font-family: "Poppins", "Montserrat", -apple-system, sans-serif;
+        }
+    </style>
+    <script>
+        // Detecta quando fontes carregaram
+        if ('fonts' in document) {
+            Promise.all([
+                document.fonts.load('400 1em Inter'),
+                document.fonts.load('700 1em Poppins')
+            ]).then(function() {
+                document.documentElement.classList.add('fonts-loaded');
+            });
+        } else {
+            // Fallback para navegadores antigos
+            setTimeout(function() {
+                document.documentElement.classList.add('fonts-loaded');
+            }, 1000);
+        }
+    </script>
+  </head>
+<body class="bg-background-light dark:bg-background-dark text-text-main-light dark:text-text-main-dark font-sans antialiased pb-28">
+<div class="bg-primary text-white px-4 py-3 flex items-start justify-between shadow-md relative z-20">
+<div class="flex items-start gap-3">
+<span class="material-symbols-outlined text-xl mt-0.5 animate-pulse">notifications_active</span>
+<p class="text-xs font-semibold leading-tight pr-4">
+<span class="font-bold">ATENCIÓN:</span> Acceso inmediato liberado para la nueva jornada de transformación femenina.
+            </p>
+</div>
+<button class="text-white hover:text-gray-200 transition-colors">
+<span class="material-symbols-outlined text-lg">close</span>
+</button>
+</div>
+<header class="px-5 py-4 flex items-center justify-between sticky top-0 bg-background-light/95 dark:bg-background-dark/95 backdrop-blur-sm z-30 transition-colors border-b border-gray-100 dark:border-gray-800">
+<div class="flex items-center gap-2">
+<div class="text-primary">
+<svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M11.645 20.91l-.007-.003-.022-.012a15.247 15.247 0 01-.383-.218 25.18 25.18 0 01-4.244-3.17C4.688 15.36 2.25 12.174 2.25 8.25 2.25 5.322 4.714 3 7.688 3A5.5 5.5 0 0112 5.052 5.5 5.5 0 0116.313 3c2.973 0 5.437 2.322 5.437 5.25 0 3.925-2.438 7.111-4.739 9.256a25.175 25.175 0 01-4.244 3.17 15.247 15.247 0 01-.383.219l-.022.012-.007.004-.003.001a.752.752 0 01-.704 0l-.003-.001z"></path>
+</svg>
+</div>
+<span class="font-display font-bold text-lg tracking-tight text-gray-900 dark:text-white">VitalityFlow</span>
+</div>
+<button class="text-gray-600 dark:text-gray-300">
+<span class="material-symbols-outlined">menu</span>
+</button>
+</header>
+<main class="max-w-md mx-auto overflow-hidden">
+<section class="px-5 pt-6 pb-10 text-center">
+<h1 class="font-display font-bold text-3xl leading-tight text-gray-900 dark:text-white mb-4">
+                Rescata tu <span class="text-primary">belleza</span>, salud y autoestima sin salir de casa.
+            </h1>
+<p class="text-text-sub-light dark:text-text-sub-dark text-base mb-8">
+                Incluso si tu rutina es un caos.
+            </p>
+<div class="relative rounded-2xl overflow-hidden shadow-xl mb-8 w-full">
+<style>wistia-player[media-id='9dq5h4uqnm']:not(:defined) { background: center / contain no-repeat url('https://fast.wistia.com/embed/medias/9dq5h4uqnm/swatch'); display: block; filter: blur(5px); padding-top:56.46%; } wistia-player[media-id='9dq5h4uqnm'] { width: 100%; height: 100%; display: block; }</style>
+<wistia-player media-id="9dq5h4uqnm" seo="false" aspect="1.7712177121771218" style="width: 100%; height: auto; display: block;"></wistia-player>
+</div>
+<p class="text-sm text-text-sub-light dark:text-text-sub-dark leading-relaxed mb-8 px-2">
+                Conoce <span class="font-bold text-gray-900 dark:text-white">VitalityFlow</span>: el método gamificado y accesible diseñado para la mujer latina ocupada que desea resultados reales sin las frustraciones de los métodos tradicionales.
+            </p>
+<a href="https://pay.hotmart.com/O103512181Y" target="_blank" class="w-full bg-primary hover:bg-pink-600 text-white font-bold py-4 px-6 rounded-full shadow-lg shadow-pink-500/30 dark:shadow-pink-900/40 flex items-center justify-center gap-2 transition-all transform hover:-translate-y-0.5 active:scale-95 mb-4 group">
+                QUIERO MI ACCESO AHORA
+                <span class="material-symbols-outlined text-xl group-hover:translate-x-1 transition-transform">arrow_forward</span>
+</a>
+<div class="flex items-center justify-center gap-2 text-xs text-green-600 dark:text-green-400 font-medium">
+<span class="material-symbols-outlined text-sm">lock</span>
+                Pago único y 100% seguro
+            </div>
+</section>
+<section class="bg-gray-50 dark:bg-black/20 pt-10 pb-12 rounded-t-[2.5rem] relative -mt-4 z-10">
+<div class="relative px-5 mb-8">
+<div class="rounded-2xl overflow-hidden shadow-lg h-64 relative">
+<img alt="Mujer pensativa mirando por la ventana" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDw7Em2wThSh6KoAth2vWt8k27GQgkGeuG9GpZNdMoXbEWa5hp-gRuXY_xzFfSl5OoFodzUhqs1m5m1V9j0pDrQZ-9zE2GPN7FrizacZ3xYNn5AhTQFkgqhGZWqchxtcyW-6NzN1yoCuN_F1teprTeUwvTWjY2BLFkcoT_pqBKNDCaEX27N8WG1xFDyKTB9zALTVGMmRlqUJEnafsFj3e64Pz9VkxyPG6bMfHng0I9Vzyztj7jr_fFg8-K6k47-GyNAhrOlI7-gaJ9E"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-60"></div>
+</div>
+<div class="absolute -bottom-10 left-4 right-4 bg-card-light dark:bg-card-dark p-6 rounded-2xl shadow-xl text-center border border-gray-100 dark:border-gray-700">
+<h2 class="font-display font-bold text-lg leading-snug text-gray-900 dark:text-white">
+                        ¿Sientes que tu <span class="text-primary">esencia</span> se está quedando atrás en medio de tantos compromisos?
+                    </h2>
+</div>
+</div>
+<div class="mt-16 px-6 text-center mb-8">
+<p class="text-sm text-text-sub-light dark:text-text-sub-dark">
+                    Sabemos cómo es: la rutina te consume y a veces sientes que no hay espacio para ti.
+                </p>
+</div>
+<div class="px-5 space-y-4">
+<div class="bg-card-light dark:bg-card-dark p-4 rounded-xl shadow-sm border border-gray-100 dark:border-gray-700 flex gap-4 items-start">
+<div class="bg-pink-100 dark:bg-pink-900/30 p-2 rounded-full shrink-0 mt-1">
+<span class="material-symbols-outlined text-primary text-xl">schedule</span>
+</div>
+<div>
+<h3 class="font-bold text-sm text-gray-900 dark:text-white mb-1">Rutina Aplastante</h3>
+<p class="text-xs text-text-sub-light dark:text-text-sub-dark leading-relaxed">
+                            Trabajo, familia, casa... tus horas desaparecen sin que te des cuenta.
+                        </p>
+</div>
+</div>
+<div class="bg-card-light dark:bg-card-dark p-4 rounded-xl shadow-sm border border-gray-100 dark:border-gray-700 flex gap-4 items-start">
+<div class="bg-pink-100 dark:bg-pink-900/30 p-2 rounded-full shrink-0 mt-1">
+<span class="material-symbols-outlined text-primary text-xl">sentiment_dissatisfied</span>
+</div>
+<div>
+<h3 class="font-bold text-sm text-gray-900 dark:text-white mb-1">Ambiente Extraño</h3>
+<p class="text-xs text-text-sub-light dark:text-text-sub-dark leading-relaxed">
+                            El gimnasio se siente ajeno y las miradas te incomodan.
+                        </p>
+</div>
+</div>
+<div class="bg-card-light dark:bg-card-dark p-4 rounded-xl shadow-sm border border-gray-100 dark:border-gray-700 flex gap-4 items-start">
+<div class="bg-pink-100 dark:bg-pink-900/30 p-2 rounded-full shrink-0 mt-1">
+<span class="material-symbols-outlined text-primary text-xl">no_food</span>
+</div>
+<div>
+<h3 class="font-bold text-sm text-gray-900 dark:text-white mb-1">Dietas Frustrantes</h3>
+<p class="text-xs text-text-sub-light dark:text-text-sub-dark leading-relaxed">
+                            Restricciones imposibles que solo traen más ansiedad.
+                        </p>
+</div>
+</div>
+</div>
+<div class="px-5 mt-6 mb-12">
+<div class="bg-secondary dark:bg-secondary-dark border-l-4 border-primary rounded-r-xl p-5 relative">
+<p class="text-sm font-medium italic text-gray-800 dark:text-gray-200 leading-relaxed">
+                        "El problema no eres tú, es el método que no fue hecho para tu realidad."
+                    </p>
+</div>
+</div>
+<div class="px-5 mb-8">
+<div class="rounded-2xl overflow-hidden shadow-lg mb-8 relative aspect-[4/3]">
+<img alt="Mujer triste mirándose en el espejo" class="w-full h-full object-cover" loading="lazy" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA1bcqJGl9pWM5_sf8SzMcvp7LsSZwl35v62wP22QFye2Yfh1Oo3vguaTGigKnBW0zMIG9ChsNnHglIU2lmOY1tVrHZaMnLmF82QTv23Qovb8pC5Ff9MwMCd_qJNcLwVSpdZCo4csTH9X23MxIGQ1HpgTgG_EruhScQhHNLgNTOT93a3qwTEIBZe1Cp3w5lKsocgWasMj4xuNazYaBzianQEOXXj9QG6pYLACe9f7OteaFBzppPP3lHGQVpiYBGZoaSY7KDGEOp9yZk"/>
+</div>
+<div class="text-center px-1">
+<h3 class="font-montserrat font-bold text-xl text-gray-900 dark:text-white mb-4 leading-tight">
+                        La confianza se desvanece frente al espejo
+                    </h3>
+<p class="text-sm text-text-sub-light dark:text-text-sub-dark leading-relaxed mb-8">
+                        Cada día que te miras y no te reconoces, algo dentro de ti se apaga un poco más. Ignorar tu salud ahora no solo cuesta estética; <span class="font-bold text-gray-900 dark:text-white">cuesta tu energía para vivir y tu alegría de sentirte bonita.</span>
+</p>
+</div>
+</div>
+<div class="px-6 text-center">
+<div class="bg-[#2a1b21] dark:bg-black rounded-2xl p-6 text-center shadow-lg border border-gray-800">
+<div class="inline-block mb-3">
+<span class="material-symbols-outlined text-primary text-3xl">battery_alert</span>
+</div>
+<p class="text-sm text-gray-200 leading-relaxed">
+                        El costo de no hacer nada es ver tu vitalidad escurrirse entre los dedos mientras el cansancio se convierte en tu única compañía.
+                    </p>
+</div>
+<div class="mt-6">
+<span class="text-[10px] font-bold tracking-widest text-primary uppercase">HAY OTRA MANERA</span>
+</div>
+</div>
+</section>
+<section class="bg-[#F5F5F5] dark:bg-neutral-900 py-16 px-6 relative z-20">
+<div class="text-center mb-10">
+<h2 class="font-montserrat font-bold text-2xl text-gray-900 dark:text-white mb-6 leading-tight">
+                    Presentamos VitalityFlow: Tu compañera de transformación definitiva.
+                </h2>
+<p class="font-roboto text-text-sub-light dark:text-text-sub-dark text-base leading-relaxed">
+                    No somos solo una aplicación de ejercicios. Somos un camino claro y guiado que entiende la biología y el ritmo de la mujer latina. Transformamos la frustración en empoderamiento a través de un formato que se adapta a ti, y no al revés.
+                </p>
+</div>
+<div class="relative mx-auto w-64 h-[500px] bg-gray-900 rounded-[2.5rem] border-[6px] border-gray-900 shadow-2xl overflow-hidden transform transition-transform duration-500 hover:scale-[1.02]">
+<div class="bg-gray-50 h-full flex flex-col relative overflow-hidden">
+<div class="h-6 w-full flex justify-between items-center px-4 pt-2 shrink-0 z-10">
+<div class="text-[8px] font-bold text-gray-500">9:41</div>
+<div class="flex gap-1">
+<div class="w-3 h-3 bg-gray-800 rounded-full opacity-20"></div>
+<div class="w-3 h-3 bg-gray-800 rounded-full opacity-20"></div>
+</div>
+</div>
+<div class="flex-1 overflow-y-auto px-4 py-4 scrollbar-hide">
+<h3 class="text-sm text-gray-500 mb-4 font-medium">6 pasos para tu mejor versión.</h3>
+<div class="bg-white border border-pink-100 rounded-2xl p-3 mb-6 flex gap-3 shadow-sm">
+<span class="material-symbols-outlined text-primary text-lg mt-0.5">auto_awesome</span>
+<p class="text-xs text-gray-600 italic leading-snug">"La persistencia es el camino al éxito. ¡Sigue brillando!"</p>
+</div>
+<div class="relative space-y-4">
+<div class="absolute left-[22px] top-4 bottom-4 w-0.5 bg-pink-100 -z-0"></div>
+<div class="bg-white rounded-2xl p-3 shadow-md border border-pink-500 relative overflow-hidden z-10">
+<div class="flex items-center gap-3 mb-2">
+<div class="w-12 h-12 bg-primary rounded-xl flex items-center justify-center shrink-0 text-white shadow-md shadow-pink-200">
+<span class="material-symbols-outlined text-2xl">play_arrow</span>
+</div>
+<div class="flex-1 min-w-0">
+<div class="text-[10px] font-bold text-primary uppercase tracking-wide mb-0.5">INICIO</div>
+<h4 class="font-bold text-gray-900 text-sm">1. Introducción</h4>
+<p class="text-[10px] text-gray-500 truncate">Empieza aquí: Entiende el método...</p>
+</div>
+<span class="material-symbols-outlined text-gray-300 text-sm">chevron_right</span>
+</div>
+<div class="h-1 w-1/3 bg-primary rounded-full absolute bottom-0 left-4"></div>
+</div>
+<div class="bg-white rounded-2xl p-3 shadow-sm border border-gray-100 z-10 flex items-center gap-3">
+<div class="w-12 h-12 bg-cyan-50 rounded-xl flex items-center justify-center shrink-0 text-cyan-600">
+<span class="material-symbols-outlined text-xl">check_circle_outline</span>
+</div>
+<div class="flex-1 min-w-0">
+<div class="text-[10px] font-bold text-gray-400 uppercase tracking-wide mb-0.5">FASE 1</div>
+<h4 class="font-bold text-gray-800 text-sm">Semana 01</h4>
+<p class="text-[10px] text-gray-400 truncate">Activando tu cuerpo y despertando...</p>
+</div>
+<span class="material-symbols-outlined text-gray-300 text-sm">chevron_right</span>
+</div>
+<div class="bg-white rounded-2xl p-3 shadow-sm border border-gray-100 z-10 flex items-center gap-3">
+<div class="w-12 h-12 bg-cyan-50 rounded-xl flex items-center justify-center shrink-0 text-cyan-600">
+<span class="material-symbols-outlined text-xl">check_circle_outline</span>
+</div>
+<div class="flex-1 min-w-0">
+<div class="text-[10px] font-bold text-gray-400 uppercase tracking-wide mb-0.5">FASE 2</div>
+<h4 class="font-bold text-gray-800 text-sm">Semana 02</h4>
+<p class="text-[10px] text-gray-400 truncate">Construyendo fuerza y superando límites...</p>
+</div>
+<span class="material-symbols-outlined text-gray-300 text-sm">chevron_right</span>
+</div>
+</div>
+</div>
+<div class="bg-white px-6 py-3 border-t border-gray-100 flex justify-between items-end shrink-0">
+<div class="flex flex-col items-center gap-1">
+<div class="bg-pink-50 p-1.5 rounded-xl">
+<span class="material-symbols-outlined text-primary text-xl">home</span>
+</div>
+<span class="text-[9px] font-bold text-primary">JORNADA</span>
+</div>
+<div class="flex flex-col items-center gap-1">
+<span class="material-symbols-outlined text-gray-300 text-xl">checklist</span>
+<span class="text-[9px] font-medium text-gray-400">TAREAS</span>
+</div>
+<div class="flex flex-col items-center gap-1">
+<span class="material-symbols-outlined text-gray-300 text-xl">person_outline</span>
+<span class="text-[9px] font-medium text-gray-400">PERFIL</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section class="bg-white dark:bg-card-dark py-12 px-6">
+<div class="max-w-sm mx-auto">
+<h2 class="font-montserrat font-bold text-xl text-gray-900 dark:text-white mb-10 leading-snug text-center">
+                    Descubre Todo lo que VitalityFlow Te Ofrece para Transformarte:
+                </h2>
+<div class="space-y-8">
+<div class="flex gap-4 items-start">
+<div class="w-12 h-12 rounded-xl bg-[#E91E63]/10 flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-[#E91E63] text-2xl">timer</span>
+</div>
+<div>
+<h3 class="font-montserrat font-medium text-base text-gray-900 dark:text-white mb-2 leading-tight">
+                                Rutina de Entrenamientos 'Express' y Personalizados en Casa
+                            </h3>
+<p class="font-roboto text-sm text-text-sub-light dark:text-text-sub-dark leading-relaxed">
+                                Acceso inmediato a cientos de entrenamientos exclusivos, con duración de apenas 15 a 30 minutos, que se adaptan perfectamente a tu horario. Quema calorías, tonifica tu cuerpo y siéntete más fuerte, sin necesidad de equipos caros o salir de la comodidad de tu hogar. Cada entrenamiento está diseñado para maximizar tus resultados en el menor tiempo posible, respetando tu ritmo y nivel.
+                            </p>
+</div>
+</div>
+<div class="flex gap-4 items-start">
+<div class="w-12 h-12 rounded-xl bg-[#00BCD4]/10 flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-[#00BCD4] text-2xl">emoji_events</span>
+</div>
+<div>
+<h3 class="font-montserrat font-medium text-base text-gray-900 dark:text-white mb-2 leading-tight">
+                                Gamificación Exclusiva: Tu Viaje de Éxito con Recompensas
+                            </h3>
+<p class="font-roboto text-sm text-text-sub-light dark:text-text-sub-dark leading-relaxed">
+                                ¡Transforma cada paso de tu evolución en un juego adictivo! Desbloquea insignias y trofeos virtuales con cada entrenamiento completado, desafío superado y meta alcanzada. Recibe reconocimiento y mensajes de aliento personalizados que te mantendrán motivada y celebrando cada pequeña victoria diaria, garantizando que nunca más pierdas el enfoque y las ganas de continuar.
+                            </p>
+</div>
+</div>
+<div class="flex gap-4 items-start">
+<div class="w-12 h-12 rounded-xl bg-[#E91E63]/10 flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-[#E91E63] text-2xl">restaurant</span>
+</div>
+<div>
+<h3 class="font-montserrat font-medium text-base text-gray-900 dark:text-white mb-2 leading-tight">
+                                Soporte de Nutrición Práctica y Sencilla
+                            </h3>
+<p class="font-roboto text-sm text-text-sub-light dark:text-text-sub-dark leading-relaxed">
+                                ¡Basta de dietas restrictivas y complicadas! Ten acceso a consejos de nutrición práctica y sencilla, elaborados para la realidad de la mujer latina. Aprende a tomar decisiones inteligentes, crea hábitos saludables y acelera tus resultados sin renunciar al placer de comer.
+                            </p>
+</div>
+</div>
+<div class="flex gap-4 items-start">
+<div class="w-12 h-12 rounded-xl bg-[#00BCD4]/10 flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-[#00BCD4] text-2xl">favorite</span>
+</div>
+<div>
+<h3 class="font-montserrat font-medium text-base text-gray-900 dark:text-white mb-2 leading-tight">
+                                Apoyo Constante de Nuestra Experta y Comunidad Exclusiva
+                            </h3>
+<p class="font-roboto text-sm text-text-sub-light dark:text-text-sub-dark leading-relaxed">
+                                ¡Nunca estarás sola en este viaje! Cuenta con el apoyo constante de nuestra experta, quien te guiará y motivará en cada etapa. Además, forma parte de una comunidad exclusiva de mujeres que, al igual que tú, están transformando sus vidas, compartiendo experiencias, resolviendo dudas y motivándose mutuamente.
+                            </p>
+</div>
+</div>
+<div class="flex gap-4 items-start">
+<div class="w-12 h-12 rounded-xl bg-[#E91E63]/10 flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-[#E91E63] text-2xl">check_circle</span>
+</div>
+<div>
+<h3 class="font-montserrat font-medium text-base text-gray-900 dark:text-white mb-2 leading-tight">
+                                Tareas Diarias y Desafíos Semanales para Mantener el Enfoque
+                            </h3>
+<p class="font-roboto text-sm text-text-sub-light dark:text-text-sub-dark leading-relaxed">
+                                Mantente comprometida y en el camino correcto con tareas diarias simples y efectivas y desafíos semanales que te impulsan a ir más allá. Cada pequeña victoria te acerca a tu mejor versión, transformando la constancia en un hábito placentero.
+                            </p>
+</div>
+</div>
+<div class="flex gap-4 items-start">
+<div class="w-12 h-12 rounded-xl bg-[#00BCD4]/10 flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-[#00BCD4] text-2xl">trending_up</span>
+</div>
+<div>
+<h3 class="font-montserrat font-medium text-base text-gray-900 dark:text-white mb-2 leading-tight">
+                                Seguimiento de Resultados Detallado e Intuitivo
+                            </h3>
+<p class="font-roboto text-sm text-text-sub-light dark:text-text-sub-dark leading-relaxed">
+                                ¡Visualiza tu evolución de forma clara y motivadora! Registra tu peso, medidas y sigue tu progreso con gráficos intuitivos e informes semanales. Ve cuánto has logrado y celebra cada cambio en tu cuerpo y en tu mente.
+                            </p>
+</div>
+</div>
+<div class="flex gap-4 items-start">
+<div class="w-12 h-12 rounded-xl bg-[#E91E63]/10 flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-[#E91E63] text-2xl">smartphone</span>
+</div>
+<div>
+<h3 class="font-montserrat font-medium text-base text-gray-900 dark:text-white mb-2 leading-tight">
+                                Acceso Ilimitado y Flexible: Tu Gimnasio en el Bolsillo, 24/7
+                            </h3>
+<p class="font-roboto text-sm text-text-sub-light dark:text-text-sub-dark leading-relaxed">
+                                ¡Tu transformación siempre está contigo! Accede a VitalityFlow en cualquier momento, en cualquier lugar, directamente desde tu celular o tablet. Entrena en la sala de tu casa, en el parque, durante la pausa del trabajo o en tus viajes. Con acceso ilimitado 24 horas al día, 7 días a la semana, tienes total libertad para adaptar tus entrenamientos a tu vida, sin excusas y sin perder el ritmo.
+                            </p>
+</div>
+</div>
+<div class="flex gap-4 items-start">
+<div class="w-12 h-12 rounded-xl bg-[#00BCD4]/10 flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-[#00BCD4] text-2xl">card_giftcard</span>
+</div>
+<div>
+<h3 class="font-montserrat font-medium text-base text-gray-900 dark:text-white mb-2 leading-tight">
+                                Actualizaciones Mensuales y Bonos Exclusivos
+                            </h3>
+<p class="font-roboto text-sm text-text-sub-light dark:text-text-sub-dark leading-relaxed">
+                                ¡Tu viaje de transformación nunca se detiene! Recibe actualizaciones mensuales con nuevos entrenamientos, consejos y contenidos para mantener tu rutina siempre fresca y desafiante. Además, obtén acceso a bonos exclusivos que potenciarán aún más tus resultados.
+                            </p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section class="bg-[#F5F5F5] dark:bg-neutral-900 py-16 px-6">
+<div class="max-w-md mx-auto">
+<h2 class="font-montserrat font-bold text-2xl text-gray-900 dark:text-white mb-8 leading-tight text-center">
+                    ¿Por qué confiar en <span class="text-[#E91E63]">VitalityFlow?</span>
+</h2>
+<div class="flex overflow-x-auto snap-x snap-mandatory gap-4 pb-6 -mx-6 px-6 scrollbar-hide mb-8">
+<div class="snap-center shrink-0 w-[280px] bg-white dark:bg-card-dark rounded-2xl p-4 shadow-md border border-gray-100 dark:border-gray-700 flex flex-col">
+<div class="h-40 rounded-lg overflow-hidden relative mb-3">
+<span class="absolute top-2 left-2 bg-black/60 backdrop-blur-md text-white text-[9px] font-bold px-2 py-0.5 rounded-full z-10">TRANSFORMACIÓN</span>
+<img alt="Transformación de Sofía" class="w-full h-full object-cover" loading="lazy" src="https://s2.glbimg.com/o9ROqkOxXqgC3J6DoMNmTrFsB5M=/s.glbimg.com/jo/g1/f/original/2014/01/29/foto-natalia.jpg"/>
+</div>
+<div class="mt-2">
+<div class="flex items-center gap-1 mb-1">
+<span class="material-symbols-outlined text-yellow-400 text-sm">star</span>
+<span class="material-symbols-outlined text-yellow-400 text-sm">star</span>
+<span class="material-symbols-outlined text-yellow-400 text-sm">star</span>
+<span class="material-symbols-outlined text-yellow-400 text-sm">star</span>
+<span class="material-symbols-outlined text-yellow-400 text-sm">star</span>
+</div>
+<h4 class="font-montserrat font-bold text-gray-900 dark:text-white text-sm">Sofía M. (38 años)</h4>
+<p class="text-xs text-text-sub-light dark:text-text-sub-dark mt-1 leading-relaxed font-roboto">"¡VitalityFlow me devolvió la vida! Antes, agotada y sin tiempo, me sentía fatal al verme al espejo. Con sus entrenamientos 'Express' de 20 minutos en casa, no solo perdí peso, sino que recuperé mi energía y la confianza. ¡Ahora me reconozco y me siento bonita de nuevo!"</p>
+</div>
+</div>
+<div class="snap-center shrink-0 w-[280px] bg-white dark:bg-card-dark rounded-2xl p-4 shadow-md border border-gray-100 dark:border-gray-700 flex flex-col">
+<div class="h-40 rounded-lg overflow-hidden relative mb-3">
+<span class="absolute top-2 left-2 bg-primary text-white text-[9px] font-bold px-2 py-0.5 rounded-full z-10">TRANSFORMACIÓN</span>
+<img alt="Transformación de Carolina" class="w-full h-full object-cover" loading="lazy" src="https://conteudo.imguol.com.br/c/entretenimento/03/2020/05/13/agatha-1-1589408489867_v2_450x450.jpg"/>
+</div>
+<div class="mt-2">
+<div class="flex items-center gap-1 mb-1">
+<span class="material-symbols-outlined text-yellow-400 text-sm">star</span>
+<span class="material-symbols-outlined text-yellow-400 text-sm">star</span>
+<span class="material-symbols-outlined text-yellow-400 text-sm">star</span>
+<span class="material-symbols-outlined text-yellow-400 text-sm">star</span>
+<span class="material-symbols-outlined text-yellow-400 text-sm">star</span>
+</div>
+<h4 class="font-montserrat font-bold text-gray-900 dark:text-white text-sm">Carolina P. (32 años)</h4>
+<p class="text-xs text-text-sub-light dark:text-text-sub-dark mt-1 leading-relaxed font-roboto">"Cansada de gimnasios y dietas inútiles, VitalityFlow fue mi salvación. Su método gamificado me enganchó, y los consejos de nutrición son súper fáciles. Entreno en casa, sin presiones, ¡como tener un personal y nutricionista en mi bolsillo! Mi cuerpo está mejor y mi mente tranquila."</p>
+</div>
+</div>
+<div class="snap-center shrink-0 w-[280px] bg-white dark:bg-card-dark rounded-2xl p-4 shadow-md border border-gray-100 dark:border-gray-700 flex flex-col">
+<div class="h-40 rounded-lg overflow-hidden relative mb-3">
+<span class="absolute top-2 left-2 bg-primary text-white text-[9px] font-bold px-2 py-0.5 rounded-full z-10">TRANSFORMACIÓN</span>
+<img alt="Transformación de Andrea" class="w-full h-full object-cover" loading="lazy" src="https://newr7-r7-prod.web.arc-cdn.net/resizer/v2/NZHJA3JZVZOEDLHPWQ45JW2QRU.jpg?auth=b50fd3dd0dcb2f4f169bf8eb75e8986d6d9b125f3ec9e3dfc533f911462ab6f9&width=600&height=557"/>
+</div>
+<div class="mt-2">
+<div class="flex items-center gap-1 mb-1">
+<span class="material-symbols-outlined text-yellow-400 text-sm">star</span>
+<span class="material-symbols-outlined text-yellow-400 text-sm">star</span>
+<span class="material-symbols-outlined text-yellow-400 text-sm">star</span>
+<span class="material-symbols-outlined text-yellow-400 text-sm">star</span>
+<span class="material-symbols-outlined text-yellow-400 text-sm">star</span>
+</div>
+<h4 class="font-montserrat font-bold text-gray-900 dark:text-white text-sm">Andrea R. (45 años)</h4>
+<p class="text-xs text-text-sub-light dark:text-text-sub-dark mt-1 leading-relaxed font-roboto">"Después de los 40, mi energía desapareció. VitalityFlow me la devolvió. Los entrenamientos son divertidos y la comunidad es un apoyo increíble. No solo mejoré mi físico, sino que tengo más energía para todo y mi ánimo es otro. ¡Una transformación integral!"</p>
+</div>
+</div>
+<div class="w-2 shrink-0"></div>
+</div>
+<div class="bg-white dark:bg-card-dark rounded-xl p-6 shadow-sm border-l-4 border-primary">
+<p class="font-montserrat font-medium text-gray-800 dark:text-gray-200 text-sm leading-relaxed italic text-center">
+                        "Somos un movimiento de mujeres latinas que decidieron dejar de aceptar el cansancio como norma. Ya hemos ayudado a cientos de mujeres a recuperar el brillo en sus ojos."
+                    </p>
+</div>
+</div>
+</section>
+<section class="bg-gradient-to-b from-[#9C27B0] via-[#E91E63] to-[#E91E63] py-16 px-6 relative z-20 overflow-hidden">
+<div class="absolute top-0 left-0 w-full h-full bg-[url('https://www.transparenttextures.com/patterns/stardust.png')] opacity-10 pointer-events-none"></div>
+<div class="max-w-md mx-auto relative z-10 text-center">
+<div class="mb-8 flex flex-col items-center">
+<span class="material-symbols-outlined text-yellow-300 text-5xl mb-3 drop-shadow-md animate-pulse">stars</span>
+<h2 class="font-montserrat font-bold text-3xl text-white leading-tight drop-shadow-md">
+                🌟 Tu Momento de Brillar ha Llegado: <br/><span class="text-yellow-100">¡La Transformación que Mereces!</span>
+</h2>
+</div>
+<div class="space-y-3 mb-6">
+<div class="bg-white/95 backdrop-blur-sm rounded-xl p-4 shadow-lg flex items-center gap-4 transform transition-transform hover:scale-105">
+<div class="w-10 h-10 bg-pink-100 rounded-full flex items-center justify-center shrink-0">
+<span class="text-2xl">🏋️‍♀️</span>
+</div>
+<div class="text-left">
+<p class="text-xs font-bold text-gray-500 uppercase">Valor de Mercado</p>
+<p class="font-bold text-gray-800 text-lg">Personal Trainer: $800/mes</p>
+</div>
+</div>
+<div class="bg-white/95 backdrop-blur-sm rounded-xl p-4 shadow-lg flex items-center gap-4 transform transition-transform hover:scale-105">
+<div class="w-10 h-10 bg-green-100 rounded-full flex items-center justify-center shrink-0">
+<span class="text-2xl">🍎</span>
+</div>
+<div class="text-left">
+<p class="text-xs font-bold text-gray-500 uppercase">Valor de Mercado</p>
+<p class="font-bold text-gray-800 text-lg">Nutricionista: $400/mes</p>
+</div>
+</div>
+<div class="bg-white/95 backdrop-blur-sm rounded-xl p-4 shadow-lg flex items-center gap-4 transform transition-transform hover:scale-105">
+<div class="w-10 h-10 bg-yellow-100 rounded-full flex items-center justify-center shrink-0">
+<span class="text-2xl">✨</span>
+</div>
+<div class="text-left">
+<p class="text-xs font-bold text-gray-500 uppercase">Valor de Mercado</p>
+<p class="font-bold text-gray-800 text-lg">Coach Motivacional: $300/mes</p>
+</div>
+</div>
+</div>
+<p class="font-montserrat font-bold text-white text-lg mb-8 drop-shadow-sm">
+            Totalizando más de $1,500 al mes por separado.
+        </p>
+<p class="font-roboto text-white/90 text-sm mb-10 leading-relaxed max-w-xs mx-auto">
+            Pero hoy, queremos que tu transformación sea accesible, completa y sin excusas. Por eso, hemos reunido todo lo que necesitas en un ecosistema único diseñado para ti, mujer latina.
+        </p>
+<div class="relative bg-white rounded-3xl p-8 border-[6px] border-[#00BCD4] shadow-2xl mb-8 transform transition-all hover:scale-[1.02]">
+<div class="absolute -top-5 left-1/2 transform -translate-x-1/2 bg-[#00BCD4] text-white px-4 py-1 rounded-full text-xs font-bold uppercase tracking-widest shadow-md">
+            Oferta Especial
+        </div>
+<p class="font-bold text-[#E91E63] text-sm mb-2 uppercase tracking-wide">
+                ¡Solo por hoy, tu acceso a VitalityFlow es por un valor promocional exclusivo!
+            </p>
+<div class="flex flex-col items-center justify-center gap-0 mb-2">
+<span class="text-gray-400 text-lg font-bold line-through decoration-red-500 decoration-2">$297</span>
+<div class="font-montserrat font-black text-[#E91E63] text-7xl tracking-tighter drop-shadow-sm leading-none">
+                $14
+            </div>
+</div>
+<p class="font-bold text-gray-600 text-xs uppercase tracking-wide mb-6">
+                Pago Único. Acceso Ilimitado de por Vida.
+            </p>
+<div class="w-full bg-[#E91E63]/5 rounded-xl border border-[#E91E63]/20 p-4 relative">
+<a href="https://pay.hotmart.com/O103512181Y" target="_blank" class="w-full bg-[#E91E63] text-white font-montserrat font-black text-base py-3.5 px-4 rounded-xl shadow-lg shadow-pink-500/40 hover:bg-[#d81b60] transition-all transform hover:-translate-y-1 active:scale-95 leading-tight uppercase flex items-center justify-center gap-2 btn-pulse-strong">
+<span>🚀 ¡APROVECHA ESTA OFERTA! $14</span>
+</a>
+<div class="flex items-center justify-center gap-1 mt-3 text-gray-500 text-[10px] font-roboto font-medium">
+<span class="material-symbols-outlined text-xs">verified_user</span>
+            Compra 100% Segura. Garantía de 7 Días.
+        </div>
+</div>
+</div>
+<div class="bg-[#00BCD4]/20 rounded-xl p-4 mb-8 border border-[#00BCD4]/50 backdrop-blur-sm">
+<div class="flex items-center justify-center gap-2 text-white font-montserrat font-bold mb-2">
+<span class="material-symbols-outlined animate-spin">hourglass_top</span>
+<span>🔥 ¡Últimas 3 plazas con este precio promocional!</span>
+</div>
+<div class="w-full bg-black/20 rounded-full h-2.5 overflow-hidden">
+<div class="bg-[#00BCD4] h-2.5 rounded-full w-[85%] shadow-[0_0_10px_rgba(0,188,212,0.8)] animate-pulse"></div>
+</div>
+</div>
+</div>
+</section>
+<section class="bg-white dark:bg-card-dark py-12 px-6">
+<div class="max-w-md mx-auto text-center">
+<div class="inline-block p-4 rounded-full bg-[#00BCD4]/10 mb-6">
+<span class="material-symbols-outlined text-[#00BCD4] text-7xl">verified_user</span>
+</div>
+<h3 class="font-montserrat font-bold text-xl text-gray-900 dark:text-white mb-4">
+            Riesgo Cero: Prueba por 7 días.
+        </h3>
+<p class="font-roboto text-text-sub-light dark:text-text-sub-dark text-base leading-relaxed">
+            Si por cualquier motivo sientes que VitalityFlow no es para ti, te devolvemos el 100% de tu dinero. Sin preguntas, sin burocracia. El riesgo está totalmente de nuestra parte.
+        </p>
+</div>
+</section>
+</main>
+</body></html>
