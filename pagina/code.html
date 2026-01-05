@@ -3,157 +3,34 @@
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <title>VitalityFlow - Combined Sales Page</title>
-<!-- Preconnect para domínios externos -->
+<!-- Preconnect crítico apenas -->
 <link rel="preconnect" href="https://cdn.tailwindcss.com"/>
-<link rel="preconnect" href="https://fast.wistia.com"/>
-<link rel="preconnect" href="https://fonts.googleapis.com"/>
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
-<link rel="dns-prefetch" href="https://connect.facebook.net"/>
-<link rel="dns-prefetch" href="https://www.facebook.com"/>
-<!-- Meta Pixel Code (carregado após DOM) -->
-<script>
-(function() {
-  if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', loadPixel);
-  } else {
-    setTimeout(loadPixel, 100);
-  }
-  function loadPixel() {
-    !function(f,b,e,v,n,t,s)
-    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-    n.queue=[];t=b.createElement(e);t.async=!0;
-    t.src=v;s=b.getElementsByTagName(e)[0];
-    s.parentNode.insertBefore(t,s)}(window, document,'script',
-    'https://connect.facebook.net/en_US/fbevents.js');
-    fbq('init', '1421388109491995');
-    fbq('track', 'PageView');
-  }
-})();
-</script>
-<noscript><img height="1" width="1" style="display:none"
-src="https://www.facebook.com/tr?id=1421388109491995&ev=PageView&noscript=1"
-/></noscript>
-<!-- End Meta Pixel Code -->
-<!-- Google Fonts -->
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;family=Montserrat:wght@500;600;700;900&amp;family=Poppins:wght@400;500;600;700&amp;family=Roboto:wght@400;500;700&amp;display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
-<!-- Tailwind CSS -->
-<script src="https://cdn.tailwindcss.com?plugins=forms,typography"></script>
-<!-- Wistia carregado sob demanda (não bloqueia inicial) -->
-<script>
-(function() {
-  let wistiaLoaded = false;
-  function loadWistia() {
-    if (wistiaLoaded) return;
-    wistiaLoaded = true;
-    const playerScript = document.createElement('script');
-    playerScript.src = 'https://fast.wistia.com/player.js';
-    playerScript.async = true;
-    document.head.appendChild(playerScript);
-    const embedScript = document.createElement('script');
-    embedScript.src = 'https://fast.wistia.com/embed/nzuh2nx89p.js';
-    embedScript.async = true;
-    embedScript.type = 'module';
-    document.head.appendChild(embedScript);
-  }
-  // Carrega após 500ms ou na primeira interação
-  setTimeout(loadWistia, 500);
-  ['scroll', 'mousemove', 'touchstart'].forEach(function(event) {
-    window.addEventListener(event, loadWistia, { once: true, passive: true });
-  });
-})();
-</script>
-<script>
-      tailwind.config = {
-        darkMode: "class",
-        theme: {
-          extend: {
-            colors: {
-              primary: "#ec2768", // Vibrant pink from screenshots
-              secondary: "#fdf2f6", // Very light pink background
-              "secondary-dark": "#3d081b", // Dark version for light pink bg
-              "background-light": "#f9fafb", // Default light bg
-              "background-dark": "#18181b", // Default dark bg
-              "card-light": "#ffffff",
-              "card-dark": "#27272a",
-              "text-main-light": "#1f2937",
-              "text-main-dark": "#f3f4f6",
-              "text-sub-light": "#4b5563",
-              "text-sub-dark": "#9ca3af",
-            },
-            fontFamily: {
-              sans: ["Inter", "sans-serif"],
-              display: ["Poppins", "sans-serif"],
-              montserrat: ["Montserrat", "sans-serif"],
-              roboto: ["Roboto", "sans-serif"],
-            },
-            borderRadius: {
-              DEFAULT: "0.75rem", // 12px
-              xl: "1rem", // 16px
-              "2xl": "1.5rem", // 24px
-            },
-          },
-        },
-      };
-    </script>
+<link rel="dns-prefetch" href="https://fonts.googleapis.com"/>
+<!-- CSS crítico inline para primeiro paint instantâneo -->
 <style>
-        @keyframes pulse-ring {
-            0% { transform: scale(0.8); box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.7); }
-            70% { transform: scale(1); box-shadow: 0 0 0 10px rgba(255, 255, 255, 0); }
-            100% { transform: scale(0.8); box-shadow: 0 0 0 0 rgba(255, 255, 255, 0); }
-        }
-        .play-btn-pulse {
-            animation: pulse-ring 2s infinite;
-        }
-        .btn-pulse-strong {
-            animation: pulse-strong 2s infinite;
-        }
-        @keyframes pulse-strong {
-            0% { transform: scale(1); box-shadow: 0 0 0 0 rgba(233, 30, 99, 0.7); }
-            50% { transform: scale(1.02); box-shadow: 0 0 0 10px rgba(233, 30, 99, 0); }
-            100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(233, 30, 99, 0); }
-        }
-        body {
-            min-height: max(884px, 100dvh);
-        }
-        .scrollbar-hide::-webkit-scrollbar {
-            display: none;
-        }
-        .scrollbar-hide {
-            -ms-overflow-style: none;
-            scrollbar-width: none;
-        }
-        /* Fallback de fontes para evitar FOIT */
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-        }
-        /* Aplica fontes quando carregarem */
-        .fonts-loaded body {
-            font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-        }
-        .fonts-loaded h1, .fonts-loaded h2, .fonts-loaded h3 {
-            font-family: "Poppins", "Montserrat", -apple-system, sans-serif;
-        }
-    </style>
-    <script>
-        // Detecta quando fontes carregaram
-        if ('fonts' in document) {
-            Promise.all([
-                document.fonts.load('400 1em Inter'),
-                document.fonts.load('700 1em Poppins')
-            ]).then(function() {
-                document.documentElement.classList.add('fonts-loaded');
-            });
-        } else {
-            // Fallback para navegadores antigos
-            setTimeout(function() {
-                document.documentElement.classList.add('fonts-loaded');
-            }, 1000);
-        }
-    </script>
-  </head>
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif;background:#f9fafb;color:#1f2937;line-height:1.5}
+  .bg-primary{background-color:#ec2768}
+  .text-primary{color:#ec2768}
+  .text-white{color:#fff}
+  .font-bold{font-weight:700}
+  .hidden{display:none}
+</style>
+<!-- Tailwind CSS - carregamento não bloqueante -->
+<script>
+  (function(){
+    var s=document.createElement('script');
+    s.src='https://cdn.tailwindcss.com?plugins=forms,typography';
+    s.async=true;
+    document.head.appendChild(s);
+    s.onload=function(){
+      if(typeof tailwind!=='undefined'){
+        tailwind.config={darkMode:"class",theme:{extend:{colors:{primary:"#ec2768",secondary:"#fdf2f6","secondary-dark":"#3d081b","background-light":"#f9fafb","background-dark":"#18181b","card-light":"#ffffff","card-dark":"#27272a","text-main-light":"#1f2937","text-main-dark":"#f3f4f6","text-sub-light":"#4b5563","text-sub-dark":"#9ca3af"},fontFamily:{sans:["Inter","sans-serif"],display:["Poppins","sans-serif"],montserrat:["Montserrat","sans-serif"],roboto:["Roboto","sans-serif"]},borderRadius:{DEFAULT:"0.75rem",xl:"1rem","2xl":"1.5rem"}}}};
+      }
+    };
+  })();
+</script>
+</head>
 <body class="bg-background-light dark:bg-background-dark text-text-main-light dark:text-text-main-dark font-sans antialiased pb-28">
 <div class="bg-primary text-white px-4 py-3 flex items-start justify-between shadow-md relative z-20">
 <div class="flex items-start gap-3">
@@ -489,7 +366,7 @@ src="https://www.facebook.com/tr?id=1421388109491995&ev=PageView&noscript=1"
 <div class="max-w-md mx-auto">
 <h2 class="font-montserrat font-bold text-2xl text-gray-900 dark:text-white mb-8 leading-tight text-center">
                     ¿Por qué confiar en <span class="text-[#E91E63]">VitalityFlow?</span>
-</h2>
+                </h2>
 <div class="flex overflow-x-auto snap-x snap-mandatory gap-4 pb-6 -mx-6 px-6 scrollbar-hide mb-8">
 <div class="snap-center shrink-0 w-[280px] bg-white dark:bg-card-dark rounded-2xl p-4 shadow-md border border-gray-100 dark:border-gray-700 flex flex-col">
 <div class="h-40 rounded-lg overflow-hidden relative mb-3">
@@ -558,7 +435,7 @@ src="https://www.facebook.com/tr?id=1421388109491995&ev=PageView&noscript=1"
 <span class="material-symbols-outlined text-yellow-300 text-5xl mb-3 drop-shadow-md animate-pulse">stars</span>
 <h2 class="font-montserrat font-bold text-3xl text-white leading-tight drop-shadow-md">
                 🌟 Tu Momento de Brillar ha Llegado: <br/><span class="text-yellow-100">¡La Transformación que Mereces!</span>
-</h2>
+            </h2>
 </div>
 <div class="space-y-3 mb-6">
 <div class="bg-white/95 backdrop-blur-sm rounded-xl p-4 shadow-lg flex items-center gap-4 transform transition-transform hover:scale-105">
@@ -646,4 +523,90 @@ src="https://www.facebook.com/tr?id=1421388109491995&ev=PageView&noscript=1"
 </div>
 </section>
 </main>
+<!-- CTA Sticky/Futuante para aumentar conversão -->
+<div id="sticky-cta" class="fixed bottom-0 left-0 right-0 bg-white dark:bg-gray-900 border-t border-gray-200 dark:border-gray-800 shadow-2xl z-50 transform translate-y-full transition-transform duration-300 ease-in-out px-4 py-3">
+  <div class="max-w-md mx-auto flex items-center gap-3">
+    <a href="https://pay.hotmart.com/O103512181Y" target="_blank" onclick="if(typeof fbq!='undefined'){fbq('track', 'InitiateCheckout');}" class="flex-1 bg-[#E91E63] hover:bg-[#d81b60] text-white font-bold py-3 px-4 rounded-xl shadow-lg shadow-pink-500/40 transition-all transform hover:scale-105 active:scale-95 text-center text-sm uppercase">
+      🚀 ¡QUIERO MI ACCESO POR $14!
+    </a>
+    <button onclick="document.getElementById('sticky-cta').classList.add('translate-y-full')" class="text-gray-400 hover:text-gray-600 dark:text-gray-500 dark:hover:text-gray-300 p-2">
+      <span class="material-symbols-outlined text-xl">close</span>
+    </button>
+  </div>
+</div>
+<!-- Scripts não críticos carregados após renderização -->
+<script>
+  // Carrega fontes após primeira renderização
+  (function(){
+    var fontLink=document.createElement('link');
+    fontLink.href='https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Montserrat:wght@500;600;700;900&family=Poppins:wght@400;500;600;700&family=Roboto:wght@400;500;700&display=swap';
+    fontLink.rel='stylesheet';
+    document.head.appendChild(fontLink);
+    var iconFont=document.createElement('link');
+    iconFont.href='https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap';
+    iconFont.rel='stylesheet';
+    document.head.appendChild(iconFont);
+  })();
+  
+  // Carrega Wistia após interação ou scroll
+  (function(){
+    var wistiaLoaded=false;
+    function loadWistia(){
+      if(wistiaLoaded)return;
+      wistiaLoaded=true;
+      var s1=document.createElement('script');
+      s1.src='https://fast.wistia.com/player.js';
+      s1.async=true;
+      document.head.appendChild(s1);
+      var s2=document.createElement('script');
+      s2.src='https://fast.wistia.com/embed/nzuh2nx89p.js';
+      s2.async=true;
+      s2.type='module';
+      document.head.appendChild(s2);
+    }
+    setTimeout(loadWistia,1000);
+    ['scroll','mousemove','touchstart'].forEach(function(e){
+      window.addEventListener(e,loadWistia,{once:true,passive:true});
+    });
+  })();
+  
+  // Carrega Pixel após primeira interação
+  (function(){
+    var pixelLoaded=false;
+    function loadPixel(){
+      if(pixelLoaded)return;
+      pixelLoaded=true;
+      !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');
+      fbq('init','1421388109491995');
+      fbq('track','PageView');
+    }
+    setTimeout(loadPixel,2000);
+    ['scroll','click','mousemove'].forEach(function(e){
+      document.addEventListener(e,loadPixel,{once:true,passive:true});
+    });
+  })();
+  
+  // CTA Sticky
+  var ctaShown=false;
+  window.addEventListener('scroll',function(){
+    if(!ctaShown&&window.scrollY>300){
+      document.getElementById('sticky-cta').classList.remove('translate-y-full');
+      ctaShown=true;
+    }
+  });
+  
+  // Tracking de cliques
+  document.querySelectorAll('a[href*="pay.hotmart"]').forEach(function(link){
+    link.addEventListener('click',function(){
+      if(typeof fbq!=='undefined')fbq('track','InitiateCheckout');
+    });
+  });
+  
+  // Estilos adicionais carregados após renderização
+  (function(){
+    var style=document.createElement('style');
+    style.textContent='@keyframes pulse-ring{0%{transform:scale(0.8);box-shadow:0 0 0 0 rgba(255,255,255,0.7)}70%{transform:scale(1);box-shadow:0 0 0 10px rgba(255,255,255,0)}100%{transform:scale(0.8);box-shadow:0 0 0 0 rgba(255,255,255,0)}}.play-btn-pulse{animation:pulse-ring 2s infinite}@keyframes pulse-strong{0%{transform:scale(1);box-shadow:0 0 0 0 rgba(233,30,99,0.7)}50%{transform:scale(1.02);box-shadow:0 0 0 10px rgba(233,30,99,0)}100%{transform:scale(1);box-shadow:0 0 0 0 rgba(233,30,99,0)}}.btn-pulse-strong{animation:pulse-strong 2s infinite}body{min-height:max(884px,100dvh)}.scrollbar-hide::-webkit-scrollbar{display:none}.scrollbar-hide{-ms-overflow-style:none;scrollbar-width:none}';
+    document.head.appendChild(style);
+  })();
+</script>
 </body></html>
