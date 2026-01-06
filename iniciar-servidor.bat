@@ -10,3 +10,6 @@ echo Servidor iniciado! A pagina deve abrir automaticamente no navegador.
 echo Para parar o servidor, feche a janela do servidor.
 pause
 
+
+
+
