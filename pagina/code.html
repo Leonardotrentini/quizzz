@@ -1,156 +1,149 @@
 <!DOCTYPE html>
 <html lang="es"><head>
 <meta charset="utf-8"/>
-<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes"/>
-<meta name="theme-color" content="#ec2768"/>
-<meta name="mobile-web-app-capable" content="yes"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <title>VitalityFlow - Combined Sales Page</title>
-<!-- CSS crítico completo inline - evita FOUC no mobile -->
-<style>
-*{margin:0;padding:0;box-sizing:border-box}
-html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
-body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;background:#f9fafb;color:#1f2937;line-height:1.5;margin:0;padding:0;overflow-x:hidden;min-height:100vh}
-img{max-width:100%;height:auto;display:block}
-a{text-decoration:none;color:inherit}
-button{border:none;background:none;cursor:pointer;font-family:inherit}
-.bg-primary{background-color:#ec2768!important}
-.text-primary{color:#ec2768!important}
-.text-white{color:#fff!important}
-.font-bold{font-weight:700!important}
-.hidden{display:none!important}
-.flex{display:flex}
-.items-center{align-items:center}
-.items-start{align-items:flex-start}
-.justify-between{justify-content:space-between}
-.justify-center{justify-content:center}
-.gap-2{gap:0.5rem}
-.gap-3{gap:0.75rem}
-.gap-4{gap:1rem}
-.w-full{width:100%}
-.h-full{height:100%}
-.px-4{padding-left:1rem;padding-right:1rem}
-.px-5{padding-left:1.25rem;padding-right:1.25rem}
-.px-6{padding-left:1.5rem;padding-right:1.5rem}
-.py-3{padding-top:0.75rem;padding-bottom:0.75rem}
-.py-4{padding-top:1rem;padding-bottom:1rem}
-.py-10{padding-top:2.5rem;padding-bottom:2.5rem}
-.pt-6{padding-top:1.5rem}
-.pb-10{padding-bottom:2.5rem}
-.pb-12{padding-bottom:3rem}
-.pb-28{padding-bottom:7rem}
-.mb-4{margin-bottom:1rem}
-.mb-8{margin-bottom:2rem}
-.mt-16{margin-top:4rem}
-.-mt-4{margin-top:-1rem}
-.text-center{text-align:center}
-.text-xs{font-size:0.75rem;line-height:1rem}
-.text-sm{font-size:0.875rem;line-height:1.25rem}
-.text-base{font-size:1rem;line-height:1.5rem}
-.text-lg{font-size:1.125rem;line-height:1.75rem}
-.text-xl{font-size:1.25rem;line-height:1.75rem}
-.text-2xl{font-size:1.5rem;line-height:2rem}
-.text-3xl{font-size:1.875rem;line-height:2.25rem}
-.rounded-full{border-radius:9999px}
-.rounded-xl{border-radius:0.75rem}
-.rounded-2xl{border-radius:1rem}
-.rounded-3xl{border-radius:1.5rem}
-.shadow-md{box-shadow:0 4px 6px -1px rgba(0,0,0,0.1),0 2px 4px -1px rgba(0,0,0,0.06)}
-.shadow-lg{box-shadow:0 10px 15px -3px rgba(0,0,0,0.1),0 4px 6px -2px rgba(0,0,0,0.05)}
-.shadow-xl{box-shadow:0 20px 25px -5px rgba(0,0,0,0.1),0 10px 10px -5px rgba(0,0,0,0.04)}
-.shadow-2xl{box-shadow:0 25px 50px -12px rgba(0,0,0,0.25)}
-.relative{position:relative}
-.absolute{position:absolute}
-.fixed{position:fixed}
-.sticky{position:sticky}
-.top-0{top:0}
-.bottom-0{bottom:0}
-.left-0{left:0}
-.right-0{right:0}
-.inset-0{top:0;right:0;bottom:0;left:0}
-.z-10{z-index:10}
-.z-20{z-index:20}
-.z-30{z-index:30}
-.z-50{z-index:50}
-.max-w-md{max-width:28rem;margin-left:auto;margin-right:auto}
-.max-w-sm{max-width:24rem;margin-left:auto;margin-right:auto}
-.mx-auto{margin-left:auto;margin-right:auto}
-.overflow-hidden{overflow:hidden}
-.object-cover{object-fit:cover}
-.leading-tight{line-height:1.25}
-.leading-relaxed{line-height:1.75}
-.font-semibold{font-weight:600}
-.uppercase{text-transform:uppercase}
-.transition-all{transition-property:all;transition-timing-function:cubic-bezier(0.4,0,0.2,1);transition-duration:150ms}
-.transform{transform:translateX(0) translateY(0) rotate(0) skewX(0) skewY(0) scaleX(1) scaleY(1)}
-.translate-y-full{transform:translateY(100%)}
-.border-t{border-top-width:1px}
-.border{border-width:1px}
-.border-gray-100{border-color:#f3f4f6}
-.border-gray-200{border-color:#e5e7eb}
-.bg-white{background-color:#fff}
-.bg-gray-50{background-color:#f9fafb}
-.bg-gray-900{background-color:#111827}
-.text-gray-400{color:#9ca3af}
-.text-gray-600{color:#4b5563}
-.text-gray-900{color:#111827}
-.text-green-600{color:#059669}
-.opacity-60{opacity:0.6}
-.backdrop-blur-sm{backdrop-filter:blur(4px)}
-.space-y-4>*+*{margin-top:1rem}
-.space-y-8>*+*{margin-top:2rem}
-@media (max-width:640px){
-.text-3xl{font-size:1.5rem;line-height:2rem}
-.text-2xl{font-size:1.25rem;line-height:1.75rem}
-.text-xl{font-size:1.125rem;line-height:1.75rem}
-.px-5{padding-left:1rem;padding-right:1rem}
-.py-16{padding-top:3rem;padding-bottom:3rem}
-}
-@keyframes pulse{0%,100%{opacity:1}50%{opacity:.5}}
-.animate-pulse{animation:pulse 2s cubic-bezier(0.4,0,0.6,1) infinite}
-@keyframes spin{to{transform:rotate(360deg)}}
-.animate-spin{animation:spin 1s linear infinite}
-.material-symbols-outlined{font-family:'Material Symbols Outlined';font-weight:normal;font-style:normal;font-size:24px;line-height:1;letter-spacing:normal;text-transform:none;display:inline-block;white-space:nowrap;word-wrap:normal;direction:ltr;-webkit-font-feature-settings:'liga';-webkit-font-smoothing:antialiased}
-</style>
-<!-- Error handling global - evita que erros quebrem a página -->
+<!-- Preconnect para domínios externos -->
+<link rel="preconnect" href="https://cdn.tailwindcss.com"/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link rel="dns-prefetch" href="https://connect.facebook.net"/>
+<link rel="dns-prefetch" href="https://www.facebook.com"/>
+<!-- Meta Pixel Code (carregado após DOM) -->
 <script>
-window.addEventListener('error',function(e){console.error('Erro capturado:',e.error);return true;},true);
-window.addEventListener('unhandledrejection',function(e){console.error('Promise rejeitada:',e.reason);e.preventDefault();});
-</script>
-<!-- Preconnect apenas para recursos críticos -->
-<link rel="dns-prefetch" href="https://fonts.googleapis.com"/>
-<link rel="dns-prefetch" href="https://cdn.tailwindcss.com"/>
-<!-- Tailwind CSS - carregamento diferido para mobile -->
-<script>
-(function(){
-  'use strict';
-  try{
-    var tailwindLoaded=false;
-    function loadTailwind(){
-      if(tailwindLoaded||document.readyState==='loading')return;
-      tailwindLoaded=true;
-      var s=document.createElement('script');
-      s.src='https://cdn.tailwindcss.com?plugins=forms,typography';
-      s.async=true;
-      s.defer=true;
-      s.onerror=function(){console.warn('Tailwind não carregou, usando CSS inline');};
-      s.onload=function(){
-        try{
-          if(typeof tailwind!=='undefined'){
-            tailwind.config={darkMode:"class",theme:{extend:{colors:{primary:"#ec2768",secondary:"#fdf2f6","secondary-dark":"#3d081b","background-light":"#f9fafb","background-dark":"#18181b","card-light":"#ffffff","card-dark":"#27272a","text-main-light":"#1f2937","text-main-dark":"#f3f4f6","text-sub-light":"#4b5563","text-sub-dark":"#9ca3af"},fontFamily:{sans:["Inter","sans-serif"],display:["Poppins","sans-serif"],montserrat:["Montserrat","sans-serif"],roboto:["Roboto","sans-serif"]},borderRadius:{DEFAULT:"0.75rem",xl:"1rem","2xl":"1.5rem"}}}};
-          }
-        }catch(e){console.warn('Erro ao configurar Tailwind:',e);}
-      };
-      document.head.appendChild(s);
-    }
-    if(document.readyState==='complete')setTimeout(loadTailwind,100);
-    else window.addEventListener('load',function(){setTimeout(loadTailwind,500)});
-    ['scroll','touchstart','mousemove'].forEach(function(e){
-      window.addEventListener(e,loadTailwind,{once:true,passive:true});
-    });
-  }catch(e){console.warn('Erro ao carregar Tailwind:',e);}
+(function() {
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', loadPixel);
+  } else {
+    setTimeout(loadPixel, 100);
+  }
+  function loadPixel() {
+    !function(f,b,e,v,n,t,s)
+    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+    n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];
+    s.parentNode.insertBefore(t,s)}(window, document,'script',
+    'https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', '1421388109491995');
+    fbq('track', 'PageView');
+  }
 })();
 </script>
-</head>
+<noscript><img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=1421388109491995&ev=PageView&noscript=1"
+/></noscript>
+<!-- End Meta Pixel Code -->
+<!-- Tailwind CSS carregado após DOM (não bloqueia renderização) -->
+<script>
+(function() {
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', loadTailwind);
+  } else {
+    loadTailwind();
+  }
+  function loadTailwind() {
+    const script = document.createElement('script');
+    script.src = 'https://cdn.tailwindcss.com?plugins=forms,typography';
+    document.head.appendChild(script);
+  }
+})();
+</script>
+<!-- Google Fonts carregadas assincronamente -->
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;family=Montserrat:wght@500;600;700;900&amp;family=Poppins:wght@400;500;600;700&amp;family=Roboto:wght@400;500;700&amp;display=swap" rel="stylesheet" media="print" onload="this.media='all'"/>
+<noscript><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;family=Montserrat:wght@500;600;700;900&amp;family=Poppins:wght@400;500;600;700&amp;family=Roboto:wght@400;500;700&amp;display=swap" rel="stylesheet"/></noscript>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet" media="print" onload="this.media='all'"/>
+<noscript><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/></noscript>
+<script>
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              primary: "#ec2768", // Vibrant pink from screenshots
+              secondary: "#fdf2f6", // Very light pink background
+              "secondary-dark": "#3d081b", // Dark version for light pink bg
+              "background-light": "#f9fafb", // Default light bg
+              "background-dark": "#18181b", // Default dark bg
+              "card-light": "#ffffff",
+              "card-dark": "#27272a",
+              "text-main-light": "#1f2937",
+              "text-main-dark": "#f3f4f6",
+              "text-sub-light": "#4b5563",
+              "text-sub-dark": "#9ca3af",
+            },
+            fontFamily: {
+              sans: ["Inter", "sans-serif"],
+              display: ["Poppins", "sans-serif"],
+              montserrat: ["Montserrat", "sans-serif"],
+              roboto: ["Roboto", "sans-serif"],
+            },
+            borderRadius: {
+              DEFAULT: "0.75rem", // 12px
+              xl: "1rem", // 16px
+              "2xl": "1.5rem", // 24px
+            },
+          },
+        },
+      };
+    </script>
+<style>
+        @keyframes pulse-ring {
+            0% { transform: scale(0.8); box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.7); }
+            70% { transform: scale(1); box-shadow: 0 0 0 10px rgba(255, 255, 255, 0); }
+            100% { transform: scale(0.8); box-shadow: 0 0 0 0 rgba(255, 255, 255, 0); }
+        }
+        .play-btn-pulse {
+            animation: pulse-ring 2s infinite;
+        }
+        .btn-pulse-strong {
+            animation: pulse-strong 2s infinite;
+        }
+        @keyframes pulse-strong {
+            0% { transform: scale(1); box-shadow: 0 0 0 0 rgba(233, 30, 99, 0.7); }
+            50% { transform: scale(1.02); box-shadow: 0 0 0 10px rgba(233, 30, 99, 0); }
+            100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(233, 30, 99, 0); }
+        }
+        body {
+            min-height: max(884px, 100dvh);
+        }
+        .scrollbar-hide::-webkit-scrollbar {
+            display: none;
+        }
+        .scrollbar-hide {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+        /* Fallback de fontes para evitar FOIT */
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+        }
+        /* Aplica fontes quando carregarem */
+        .fonts-loaded body {
+            font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+        }
+        .fonts-loaded h1, .fonts-loaded h2, .fonts-loaded h3 {
+            font-family: "Poppins", "Montserrat", -apple-system, sans-serif;
+        }
+    </style>
+    <script>
+        // Detecta quando fontes carregaram
+        if ('fonts' in document) {
+            Promise.all([
+                document.fonts.load('400 1em Inter'),
+                document.fonts.load('700 1em Poppins')
+            ]).then(function() {
+                document.documentElement.classList.add('fonts-loaded');
+            });
+        } else {
+            // Fallback para navegadores antigos
+            setTimeout(function() {
+                document.documentElement.classList.add('fonts-loaded');
+            }, 1000);
+        }
+    </script>
+  </head>
 <body class="bg-background-light dark:bg-background-dark text-text-main-light dark:text-text-main-dark font-sans antialiased pb-28">
 <div class="bg-primary text-white px-4 py-3 flex items-start justify-between shadow-md relative z-20">
 <div class="flex items-start gap-3">
@@ -176,59 +169,27 @@ window.addEventListener('unhandledrejection',function(e){console.error('Promise 
 <span class="material-symbols-outlined">menu</span>
 </button>
 </header>
-<!-- Prova Social Rápida - Aparece logo após header -->
-<div class="bg-green-50 border-l-4 border-green-500 p-3 text-center mx-4 mt-2 rounded-r-lg shadow-sm" id="social-proof-banner">
-<p class="text-sm font-bold text-gray-800">
-✅ <strong id="client-count">2.847 mujeres</strong> ya transformaron sus vidas
-</p>
-<p class="text-xs text-gray-600 mt-1">
-Última compra hace <span id="last-purchase">3 minutos</span>
-</p>
-</div>
 <main class="max-w-md mx-auto overflow-hidden">
 <section class="px-5 pt-6 pb-10 text-center">
 <h1 class="font-display font-bold text-3xl leading-tight text-gray-900 dark:text-white mb-4">
-                Perde <strong>5-8kg em 30 dias</strong> sem dietas malucas ou <span class="text-primary">horas no gym</span>
+                Rescata tu <span class="text-primary">belleza</span>, salud y autoestima sin salir de casa.
             </h1>
-<p class="text-text-sub-light dark:text-text-sub-dark text-base mb-2 font-semibold">
-                O método que já ajudou <strong class="text-primary">2.847 mulheres latinas</strong> a recuperar sua confiança e energia em casa
-            </p>
-<p class="text-text-sub-light dark:text-text-sub-dark text-sm mb-8">
-                Incluso si tu rutina es un caos.
-            </p>
-<div class="relative rounded-2xl overflow-hidden shadow-xl mb-8 w-full" id="video-container" style="padding-top:56.25%;background:linear-gradient(135deg,#ec2768 0%,#d81b60 100%);position:relative">
-<div id="video-placeholder" style="position:absolute;top:0;left:0;width:100%;height:100%;display:flex;align-items:center;justify-content:center;flex-direction:column;color:white;text-align:center;padding:20px;cursor:pointer">
-<div style="width:64px;height:64px;border-radius:50%;background:rgba(255,255,255,0.3);display:flex;align-items:center;justify-content:center;margin-bottom:16px;transition:transform 0.2s" onmouseover="this.style.transform='scale(1.1)'" onmouseout="this.style.transform='scale(1)'">
-<svg style="width:32px;height:32px;fill:white;margin-left:4px" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
-</div>
-<p style="font-weight:bold;font-size:18px;margin:0">Ver Video</p>
-<p style="font-size:14px;opacity:0.9;margin:8px 0 0 0">Haz clic para reproducir</p>
-</div>
-<div id="video-player" style="position:absolute;top:0;left:0;width:100%;height:100%;display:none"></div>
-</div>
 <p class="text-sm text-text-sub-light dark:text-text-sub-dark leading-relaxed mb-8 px-2">
                 Conoce <span class="font-bold text-gray-900 dark:text-white">VitalityFlow</span>: el método gamificado y accesible diseñado para la mujer latina ocupada que desea resultados reales sin las frustraciones de los métodos tradicionales.
             </p>
-<a href="https://quizz-app-five-plum.vercel.app/" target="_blank" class="w-full bg-primary hover:bg-pink-600 text-white font-bold py-4 px-6 rounded-full shadow-lg shadow-pink-500/30 dark:shadow-pink-900/40 flex items-center justify-center gap-2 transition-all transform hover:-translate-y-0.5 active:scale-95 mb-4 group">
-                GIANOSTICAR AHORA
+<a href="https://pay.hotmart.com/O103512181Y" target="_blank" class="w-full bg-primary hover:bg-pink-600 text-white font-bold py-4 px-6 rounded-full shadow-lg shadow-pink-500/30 dark:shadow-pink-900/40 flex items-center justify-center gap-2 transition-all transform hover:-translate-y-0.5 active:scale-95 mb-4 group">
+                QUIERO MI ACCESO AHORA
                 <span class="material-symbols-outlined text-xl group-hover:translate-x-1 transition-transform">arrow_forward</span>
 </a>
-<div class="flex items-center justify-center gap-2 text-xs text-green-600 dark:text-green-400 font-medium mb-4">
+<div class="flex items-center justify-center gap-2 text-xs text-green-600 dark:text-green-400 font-medium">
 <span class="material-symbols-outlined text-sm">lock</span>
                 Pago único y 100% seguro
             </div>
-<div class="flex items-center justify-center gap-3 text-xs text-gray-500 mb-4">
-<span>🔒 SSL Seguro</span>
-<span>•</span>
-<span>✅ Hotmart Verificado</span>
-<span>•</span>
-<span>💳 Pagamento Protegido</span>
-</div>
 </section>
 <section class="bg-gray-50 dark:bg-black/20 pt-10 pb-12 rounded-t-[2.5rem] relative -mt-4 z-10">
 <div class="relative px-5 mb-8">
 <div class="rounded-2xl overflow-hidden shadow-lg h-64 relative">
-<img alt="Mujer pensativa mirando por la ventana" class="w-full h-full object-cover" loading="eager" decoding="async" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDw7Em2wThSh6KoAth2vWt8k27GQgkGeuG9GpZNdMoXbEWa5hp-gRuXY_xzFfSl5OoFodzUhqs1m5m1V9j0pDrQZ-9zE2GPN7FrizacZ3xYNn5AhTQFkgqhGZWqchxtcyW-6NzN1yoCuN_F1teprTeUwvTWjY2BLFkcoT_pqBKNDCaEX27N8WG1xFDyKTB9zALTVGMmRlqUJEnafsFj3e64Pz9VkxyPG6bMfHng0I9Vzyztj7jr_fFg8-K6k47-GyNAhrOlI7-gaJ9E"/>
+<img alt="Mujer pensativa mirando por la ventana" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDw7Em2wThSh6KoAth2vWt8k27GQgkGeuG9GpZNdMoXbEWa5hp-gRuXY_xzFfSl5OoFodzUhqs1m5m1V9j0pDrQZ-9zE2GPN7FrizacZ3xYNn5AhTQFkgqhGZWqchxtcyW-6NzN1yoCuN_F1teprTeUwvTWjY2BLFkcoT_pqBKNDCaEX27N8WG1xFDyKTB9zALTVGMmRlqUJEnafsFj3e64Pz9VkxyPG6bMfHng0I9Vzyztj7jr_fFg8-K6k47-GyNAhrOlI7-gaJ9E"/>
 <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-60"></div>
 </div>
 <div class="absolute -bottom-10 left-4 right-4 bg-card-light dark:bg-card-dark p-6 rounded-2xl shadow-xl text-center border border-gray-100 dark:border-gray-700">
@@ -284,15 +245,9 @@ window.addEventListener('unhandledrejection',function(e){console.error('Promise 
                     </p>
 </div>
 </div>
-<!-- CTA Após Problemas -->
-<div class="px-5 mb-8 text-center">
-<a href="https://quizz-app-five-plum.vercel.app/" target="_blank" class="inline-block bg-primary hover:bg-pink-600 text-white font-bold py-3 px-6 rounded-full shadow-lg shadow-pink-500/30 transition-all transform hover:scale-105 active:scale-95">
-            GIANOSTICAR AHORA
-        </a>
-</div>
 <div class="px-5 mb-8">
 <div class="rounded-2xl overflow-hidden shadow-lg mb-8 relative aspect-[4/3]">
-<img alt="Mujer triste mirándose en el espejo" class="w-full h-full object-cover" loading="lazy" decoding="async" data-src="https://lh3.googleusercontent.com/aida-public/AB6AXuA1bcqJGl9pWM5_sf8SzMcvp7LsSZwl35v62wP22QFye2Yfh1Oo3vguaTGigKnBW0zMIG9ChsNnHglIU2lmOY1tVrHZaMnLmF82QTv23Qovb8pC5Ff9MwMCd_qJNcLwVSpdZCo4csTH9X23MxIGQ1HpgTgG_EruhScQhHNLgNTOT93a3qwTEIBZe1Cp3w5lKsocgWasMj4xuNazYaBzianQEOXXj9QG6pYLACe9f7OteaFBzppPP3lHGQVpiYBGZoaSY7KDGEOp9yZk" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 300'%3E%3Crect fill='%23f3f4f6' width='400' height='300'/%3E%3C/svg%3E"/>
+<img alt="Mujer triste mirándose en el espejo" class="w-full h-full object-cover" loading="lazy" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA1bcqJGl9pWM5_sf8SzMcvp7LsSZwl35v62wP22QFye2Yfh1Oo3vguaTGigKnBW0zMIG9ChsNnHglIU2lmOY1tVrHZaMnLmF82QTv23Qovb8pC5Ff9MwMCd_qJNcLwVSpdZCo4csTH9X23MxIGQ1HpgTgG_EruhScQhHNLgNTOT93a3qwTEIBZe1Cp3w5lKsocgWasMj4xuNazYaBzianQEOXXj9QG6pYLACe9f7OteaFBzppPP3lHGQVpiYBGZoaSY7KDGEOp9yZk"/>
 </div>
 <div class="text-center px-1">
 <h3 class="font-montserrat font-bold text-xl text-gray-900 dark:text-white mb-4 leading-tight">
@@ -517,12 +472,12 @@ window.addEventListener('unhandledrejection',function(e){console.error('Promise 
 <div class="max-w-md mx-auto">
 <h2 class="font-montserrat font-bold text-2xl text-gray-900 dark:text-white mb-8 leading-tight text-center">
                     ¿Por qué confiar en <span class="text-[#E91E63]">VitalityFlow?</span>
-                </h2>
+</h2>
 <div class="flex overflow-x-auto snap-x snap-mandatory gap-4 pb-6 -mx-6 px-6 scrollbar-hide mb-8">
 <div class="snap-center shrink-0 w-[280px] bg-white dark:bg-card-dark rounded-2xl p-4 shadow-md border border-gray-100 dark:border-gray-700 flex flex-col">
 <div class="h-40 rounded-lg overflow-hidden relative mb-3">
 <span class="absolute top-2 left-2 bg-black/60 backdrop-blur-md text-white text-[9px] font-bold px-2 py-0.5 rounded-full z-10">TRANSFORMACIÓN</span>
-<img alt="Transformación de Sofía" class="w-full h-full object-cover" loading="lazy" decoding="async" data-src="https://s2.glbimg.com/o9ROqkOxXqgC3J6DoMNmTrFsB5M=/s.glbimg.com/jo/g1/f/original/2014/01/29/foto-natalia.jpg" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 280 160'%3E%3Crect fill='%23f3f4f6' width='280' height='160'/%3E%3C/svg%3E"/>
+<img alt="Transformación de Sofía" class="w-full h-full object-cover" loading="lazy" src="https://s2.glbimg.com/o9ROqkOxXqgC3J6DoMNmTrFsB5M=/s.glbimg.com/jo/g1/f/original/2014/01/29/foto-natalia.jpg"/>
 </div>
 <div class="mt-2">
 <div class="flex items-center gap-1 mb-1">
@@ -539,7 +494,7 @@ window.addEventListener('unhandledrejection',function(e){console.error('Promise 
 <div class="snap-center shrink-0 w-[280px] bg-white dark:bg-card-dark rounded-2xl p-4 shadow-md border border-gray-100 dark:border-gray-700 flex flex-col">
 <div class="h-40 rounded-lg overflow-hidden relative mb-3">
 <span class="absolute top-2 left-2 bg-primary text-white text-[9px] font-bold px-2 py-0.5 rounded-full z-10">TRANSFORMACIÓN</span>
-<img alt="Transformación de Carolina" class="w-full h-full object-cover" loading="lazy" decoding="async" data-src="https://conteudo.imguol.com.br/c/entretenimento/03/2020/05/13/agatha-1-1589408489867_v2_450x450.jpg" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 280 160'%3E%3Crect fill='%23f3f4f6' width='280' height='160'/%3E%3C/svg%3E"/>
+<img alt="Transformación de Carolina" class="w-full h-full object-cover" loading="lazy" src="https://conteudo.imguol.com.br/c/entretenimento/03/2020/05/13/agatha-1-1589408489867_v2_450x450.jpg"/>
 </div>
 <div class="mt-2">
 <div class="flex items-center gap-1 mb-1">
@@ -556,7 +511,7 @@ window.addEventListener('unhandledrejection',function(e){console.error('Promise 
 <div class="snap-center shrink-0 w-[280px] bg-white dark:bg-card-dark rounded-2xl p-4 shadow-md border border-gray-100 dark:border-gray-700 flex flex-col">
 <div class="h-40 rounded-lg overflow-hidden relative mb-3">
 <span class="absolute top-2 left-2 bg-primary text-white text-[9px] font-bold px-2 py-0.5 rounded-full z-10">TRANSFORMACIÓN</span>
-<img alt="Transformación de Andrea" class="w-full h-full object-cover" loading="lazy" decoding="async" data-src="https://newr7-r7-prod.web.arc-cdn.net/resizer/v2/NZHJA3JZVZOEDLHPWQ45JW2QRU.jpg?auth=b50fd3dd0dcb2f4f169bf8eb75e8986d6d9b125f3ec9e3dfc533f911462ab6f9&width=600&height=557" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 280 160'%3E%3Crect fill='%23f3f4f6' width='280' height='160'/%3E%3C/svg%3E"/>
+<img alt="Transformación de Andrea" class="w-full h-full object-cover" loading="lazy" src="https://newr7-r7-prod.web.arc-cdn.net/resizer/v2/NZHJA3JZVZOEDLHPWQ45JW2QRU.jpg?auth=b50fd3dd0dcb2f4f169bf8eb75e8986d6d9b125f3ec9e3dfc533f911462ab6f9&width=600&height=557"/>
 </div>
 <div class="mt-2">
 <div class="flex items-center gap-1 mb-1">
@@ -578,12 +533,6 @@ window.addEventListener('unhandledrejection',function(e){console.error('Promise 
                     </p>
 </div>
 </div>
-<!-- CTA Após Depoimentos -->
-<div class="text-center mt-8 mb-8">
-<a href="https://quizz-app-five-plum.vercel.app/" target="_blank" class="inline-block bg-primary hover:bg-pink-600 text-white font-bold py-4 px-8 rounded-full shadow-lg shadow-pink-500/30 transition-all transform hover:scale-105 active:scale-95 text-lg">
-            GIANOSTICAR AHORA
-        </a>
-</div>
 </section>
 <section class="bg-gradient-to-b from-[#9C27B0] via-[#E91E63] to-[#E91E63] py-16 px-6 relative z-20 overflow-hidden">
 <div class="absolute top-0 left-0 w-full h-full bg-[url('https://www.transparenttextures.com/patterns/stardust.png')] opacity-10 pointer-events-none"></div>
@@ -592,7 +541,7 @@ window.addEventListener('unhandledrejection',function(e){console.error('Promise 
 <span class="material-symbols-outlined text-yellow-300 text-5xl mb-3 drop-shadow-md animate-pulse">stars</span>
 <h2 class="font-montserrat font-bold text-3xl text-white leading-tight drop-shadow-md">
                 🌟 Tu Momento de Brillar ha Llegado: <br/><span class="text-yellow-100">¡La Transformación que Mereces!</span>
-            </h2>
+</h2>
 </div>
 <div class="space-y-3 mb-6">
 <div class="bg-white/95 backdrop-blur-sm rounded-xl p-4 shadow-lg flex items-center gap-4 transform transition-transform hover:scale-105">
@@ -639,15 +588,15 @@ window.addEventListener('unhandledrejection',function(e){console.error('Promise 
 <div class="flex flex-col items-center justify-center gap-0 mb-2">
 <span class="text-gray-400 text-lg font-bold line-through decoration-red-500 decoration-2">$297</span>
 <div class="font-montserrat font-black text-[#E91E63] text-7xl tracking-tighter drop-shadow-sm leading-none">
-                $29
+                $14
             </div>
 </div>
 <p class="font-bold text-gray-600 text-xs uppercase tracking-wide mb-6">
                 Pago Único. Acceso Ilimitado de por Vida.
             </p>
 <div class="w-full bg-[#E91E63]/5 rounded-xl border border-[#E91E63]/20 p-4 relative">
-<a href="https://quizz-app-five-plum.vercel.app/" target="_blank" class="w-full bg-[#E91E63] text-white font-montserrat font-black text-base py-3.5 px-4 rounded-xl shadow-lg shadow-pink-500/40 hover:bg-[#d81b60] transition-all transform hover:-translate-y-1 active:scale-95 leading-tight uppercase flex items-center justify-center gap-2 btn-pulse-strong">
-<span>🚀 GIANOSTICAR AHORA</span>
+<a href="https://pay.hotmart.com/O103512181Y" target="_blank" class="w-full bg-[#E91E63] text-white font-montserrat font-black text-base py-3.5 px-4 rounded-xl shadow-lg shadow-pink-500/40 hover:bg-[#d81b60] transition-all transform hover:-translate-y-1 active:scale-95 leading-tight uppercase flex items-center justify-center gap-2 btn-pulse-strong">
+<span>🚀 ¡APROVECHA ESTA OFERTA! $14</span>
 </a>
 <div class="flex items-center justify-center gap-1 mt-3 text-gray-500 text-[10px] font-roboto font-medium">
 <span class="material-symbols-outlined text-xs">verified_user</span>
@@ -658,14 +607,10 @@ window.addEventListener('unhandledrejection',function(e){console.error('Promise 
 <div class="bg-[#00BCD4]/20 rounded-xl p-4 mb-8 border border-[#00BCD4]/50 backdrop-blur-sm">
 <div class="flex items-center justify-center gap-2 text-white font-montserrat font-bold mb-2">
 <span class="material-symbols-outlined animate-spin">hourglass_top</span>
-<span>🔥 ¡Últimas <span id="remaining-spots">3</span> plazas con este precio promocional!</span>
+<span>🔥 ¡Últimas 3 plazas con este precio promocional!</span>
 </div>
 <div class="w-full bg-black/20 rounded-full h-2.5 overflow-hidden">
-<div class="bg-[#00BCD4] h-2.5 rounded-full" id="progress-bar" style="width:85%;box-shadow:0 0 10px rgba(0,188,212,0.8);animation:pulse 2s infinite"></div>
-</div>
-<div class="text-center mt-3 text-white text-xs">
-<p>⏰ Esta oferta expira en: <strong id="countdown-timer">23:59:59</strong></p>
-<p class="mt-1">🔥 <strong id="sales-today">12 personas</strong> compraron hoy</p>
+<div class="bg-[#00BCD4] h-2.5 rounded-full w-[85%] shadow-[0_0_10px_rgba(0,188,212,0.8)] animate-pulse"></div>
 </div>
 </div>
 </div>
@@ -683,331 +628,5 @@ window.addEventListener('unhandledrejection',function(e){console.error('Promise 
         </p>
 </div>
 </section>
-<!-- FAQ - Responde Objeções -->
-<section class="bg-gray-50 dark:bg-black/20 py-12 px-6">
-<div class="max-w-md mx-auto">
-<h2 class="font-montserrat font-bold text-2xl text-gray-900 dark:text-white mb-8 leading-tight text-center">
-                    Preguntas Frecuentes
-                </h2>
-<div class="space-y-4">
-<div class="bg-white dark:bg-card-dark rounded-xl p-5 shadow-sm border border-gray-100 dark:border-gray-700">
-<h3 class="font-bold text-base text-gray-900 dark:text-white mb-2">¿Funciona sin equipos de gimnasio?</h3>
-<p class="text-sm text-text-sub-light dark:text-text-sub-dark leading-relaxed">Sí, todos los entrenamientos están diseñados para usar solo tu peso corporal. No necesitas ningún equipo especial, solo espacio en tu casa.</p>
-</div>
-<div class="bg-white dark:bg-card-dark rounded-xl p-5 shadow-sm border border-gray-100 dark:border-gray-700">
-<h3 class="font-bold text-base text-gray-900 dark:text-white mb-2">¿Cuánto tiempo necesito por día?</h3>
-<p class="text-sm text-text-sub-light dark:text-text-sub-dark leading-relaxed">Solo 15 a 30 minutos por día. Los entrenamientos están diseñados para adaptarse a tu rutina, incluso si tienes poco tiempo.</p>
-</div>
-<div class="bg-white dark:bg-card-dark rounded-xl p-5 shadow-sm border border-gray-100 dark:border-gray-700">
-<h3 class="font-bold text-base text-gray-900 dark:text-white mb-2">¿Puedo cancelar y recibir reembolso?</h3>
-<p class="text-sm text-text-sub-light dark:text-text-sub-dark leading-relaxed">Sí, tienes 7 días completos para probar. Si no estás satisfecha, te devolvemos el 100% de tu dinero, sin preguntas.</p>
-</div>
-<div class="bg-white dark:bg-card-dark rounded-xl p-5 shadow-sm border border-gray-100 dark:border-gray-700">
-<h3 class="font-bold text-base text-gray-900 dark:text-white mb-2">¿Funciona en cualquier edad?</h3>
-<p class="text-sm text-text-sub-light dark:text-text-sub-dark leading-relaxed">Sí, el método está diseñado para mujeres de todas las edades. Los entrenamientos se adaptan a tu nivel y condición física.</p>
-</div>
-<div class="bg-white dark:bg-card-dark rounded-xl p-5 shadow-sm border border-gray-100 dark:border-gray-700">
-<h3 class="font-bold text-base text-gray-900 dark:text-white mb-2">¿Necesito experiencia previa?</h3>
-<p class="text-sm text-text-sub-light dark:text-text-sub-dark leading-relaxed">No, el programa está diseñado para principiantes. Incluye guías paso a paso y adaptaciones para todos los niveles.</p>
-</div>
-</div>
-</div>
-</section>
-<!-- CTA Final Urgente -->
-<section class="bg-primary py-12 px-6 text-center">
-<div class="max-w-md mx-auto">
-<h2 class="font-montserrat font-bold text-2xl text-white mb-4">
-            ⚡ No Pierdas Esta Oportunidad Única
-        </h2>
-<p class="text-white/90 text-base mb-6 leading-relaxed">
-            Más de 2.800 mujeres ya transformaron sus vidas. Tu momento es ahora.
-        </p>
-<a href="https://quizz-app-five-plum.vercel.app/" target="_blank" class="w-full bg-white text-primary hover:bg-gray-100 font-bold py-4 px-6 rounded-full shadow-2xl flex items-center justify-center gap-2 transition-all transform hover:scale-105 active:scale-95 mb-4 text-lg">
-            🚀 GIANOSTICAR AHORA
-            <span class="material-symbols-outlined text-xl">arrow_forward</span>
-</a>
-<p class="text-white/80 text-xs">
-            ✅ Pago único • ✅ Acceso de por vida • ✅ Garantía de 7 días
-        </p>
-</div>
-</section>
 </main>
-<!-- CTA Sticky/Futuante para aumentar conversão - Sempre visível no mobile -->
-<div id="sticky-cta" class="fixed bottom-0 left-0 right-0 bg-white dark:bg-gray-900 border-t border-gray-200 dark:border-gray-800 shadow-2xl z-50 transform translate-y-full transition-transform duration-300 ease-in-out px-4 py-3">
-  <div class="max-w-md mx-auto flex items-center gap-3">
-    <a href="https://quizz-app-five-plum.vercel.app/" target="_blank" onclick="try{if(typeof fbq!='undefined'){fbq('track', 'InitiateCheckout');}}catch(e){}" class="flex-1 bg-[#E91E63] hover:bg-[#d81b60] text-white font-bold py-3 px-4 rounded-xl shadow-lg shadow-pink-500/40 transition-all transform hover:scale-105 active:scale-95 text-center text-sm uppercase">
-      🚀 GIANOSTICAR AHORA
-    </a>
-    <button onclick="try{document.getElementById('sticky-cta').classList.add('translate-y-full');}catch(e){}" class="text-gray-400 hover:text-gray-600 dark:text-gray-500 dark:hover:text-gray-300 p-2" aria-label="Fechar">
-      <span class="material-symbols-outlined text-xl">close</span>
-    </button>
-  </div>
-</div>
-<style>
-@media (max-width:768px){
-  #sticky-cta{transform:translateY(0)!important}
-  body{padding-bottom:5rem}
-}
-</style>
-<!-- Scripts otimizados para mobile -->
-<script>
-(function(){
-'use strict';
-try{
-  // Lazy loading de imagens com Intersection Observer
-  if('IntersectionObserver' in window){
-    var imageObserver=new IntersectionObserver(function(entries,observer){
-      entries.forEach(function(entry){
-        if(entry.isIntersecting){
-          var img=entry.target;
-          if(img.dataset.src){
-            img.src=img.dataset.src;
-            img.removeAttribute('data-src');
-            observer.unobserve(img);
-          }
-        }
-      });
-    },{rootMargin:'50px'});
-    document.querySelectorAll('img[data-src]').forEach(function(img){
-      imageObserver.observe(img);
-    });
-  }else{
-    // Fallback para navegadores antigos
-    document.querySelectorAll('img[data-src]').forEach(function(img){
-      img.src=img.dataset.src;
-      img.removeAttribute('data-src');
-    });
-  }
-}catch(e){console.warn('Erro no lazy loading:',e);}
-
-// Carrega fontes apenas após primeira renderização
-try{
-  var fontsLoaded=false;
-  function loadFonts(){
-    if(fontsLoaded||document.readyState==='loading')return;
-    fontsLoaded=true;
-    var fontLink=document.createElement('link');
-    fontLink.href='https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Montserrat:wght@500;600;700;900&family=Poppins:wght@400;500;600;700&family=Roboto:wght@400;500;700&display=swap';
-    fontLink.rel='stylesheet';
-    fontLink.media='print';
-    fontLink.onload=function(){this.media='all'};
-    fontLink.onerror=function(){console.warn('Fontes não carregaram, usando fallback');};
-    document.head.appendChild(fontLink);
-    var iconFont=document.createElement('link');
-    iconFont.href='https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap';
-    iconFont.rel='stylesheet';
-    iconFont.media='print';
-    iconFont.onload=function(){this.media='all'};
-    iconFont.onerror=function(){console.warn('Ícones não carregaram, usando fallback');};
-    document.head.appendChild(iconFont);
-  }
-  if(document.readyState==='complete')setTimeout(loadFonts,500);
-  else window.addEventListener('load',function(){setTimeout(loadFonts,1000)});
-}catch(e){console.warn('Erro ao carregar fontes:',e);}
-
-})();
-
-// Carrega Wistia quando usuário clica no vídeo
-(function(){
-'use strict';
-try{
-  var wistiaLoaded=false;
-  var videoPlaceholder=document.getElementById('video-placeholder');
-  var videoPlayer=document.getElementById('video-player');
-  
-  function loadWistiaVideo(e){
-    if(e)e.preventDefault();
-    if(wistiaLoaded)return;
-    
-    try{
-      wistiaLoaded=true;
-      console.log('Carregando vídeo Wistia...');
-      
-      // Mostra loading
-      if(videoPlaceholder){
-        videoPlaceholder.innerHTML='<div style="text-align:center;color:white;padding:20px"><div style="width:40px;height:40px;border:4px solid rgba(255,255,255,0.3);border-top-color:white;border-radius:50%;animation:spin 1s linear infinite;margin:0 auto 16px"></div><p style="font-size:14px">Cargando video...</p></div>';
-      }
-      
-      // Carrega player.js primeiro
-      var s1=document.createElement('script');
-      s1.src='https://fast.wistia.com/player.js';
-      s1.async=true;
-      s1.onload=function(){
-        console.log('Wistia player.js carregado');
-        // Depois carrega o embed
-        var s2=document.createElement('script');
-        s2.src='https://fast.wistia.com/embed/nzuh2nx89p.js';
-        s2.async=true;
-        s2.type='module';
-        s2.onload=function(){
-          console.log('Wistia embed carregado');
-          // Adiciona o player
-          if(videoPlayer){
-            videoPlayer.innerHTML='<wistia-player media-id="nzuh2nx89p" seo="false" aspect="1.7777777777777777"></wistia-player>';
-            videoPlayer.style.display='block';
-            if(videoPlaceholder)videoPlaceholder.style.display='none';
-          }
-        };
-        s2.onerror=function(){
-          console.warn('Erro ao carregar embed Wistia');
-          showVideoError();
-        };
-        document.head.appendChild(s2);
-      };
-      s1.onerror=function(){
-        console.warn('Erro ao carregar player.js Wistia');
-        showVideoError();
-      };
-      document.head.appendChild(s1);
-      
-      // Timeout de segurança
-      setTimeout(function(){
-        if(videoPlayer&&videoPlayer.style.display==='none'){
-          showVideoError();
-        }
-      },10000);
-    }catch(err){
-      console.error('Erro ao carregar Wistia:',err);
-      showVideoError();
-    }
-  }
-  
-  function showVideoError(){
-    if(videoPlaceholder){
-      videoPlaceholder.style.display='flex';
-      videoPlaceholder.innerHTML='<div style="text-align:center;color:white;padding:20px"><p style="font-weight:bold;font-size:16px;margin-bottom:8px">⚠️ Video no disponible</p><p style="font-size:12px;opacity:0.9;margin-bottom:12px">Pero puedes acceder directamente</p><a href="https://quizz-app-five-plum.vercel.app/" target="_blank" style="display:inline-block;background:white;color:#ec2768;padding:10px 20px;border-radius:9999px;font-weight:bold;text-decoration:none;font-size:14px">Ir para Compra</a></div>';
-    }
-  }
-  
-  // Adiciona eventos quando DOM estiver pronto
-  if(document.readyState==='loading'){
-    document.addEventListener('DOMContentLoaded',function(){
-      setupVideoEvents();
-    });
-  }else{
-    setupVideoEvents();
-  }
-  
-  function setupVideoEvents(){
-    if(videoPlaceholder){
-      videoPlaceholder.addEventListener('click',loadWistiaVideo,{once:true});
-      videoPlaceholder.addEventListener('touchstart',function(e){
-        e.preventDefault();
-        loadWistiaVideo(e);
-      },{once:true,passive:false});
-      videoPlaceholder.style.cursor='pointer';
-      videoPlaceholder.setAttribute('role','button');
-      videoPlaceholder.setAttribute('tabindex','0');
-      videoPlaceholder.setAttribute('aria-label','Reproducir video');
-      // Suporte para Enter
-      videoPlaceholder.addEventListener('keypress',function(e){
-        if(e.key==='Enter'||e.key===' '){
-          e.preventDefault();
-          loadWistiaVideo(e);
-        }
-      });
-    }
-  }
-}catch(e){console.error('Erro ao configurar vídeo:',e);}
-})();
-  
-// Contador Regressivo
-try{
-  function updateCountdown(){
-    var now=new Date();
-    var tomorrow=new Date(now);
-    tomorrow.setDate(tomorrow.getDate()+1);
-    tomorrow.setHours(23,59,59,0);
-    var diff=tomorrow-now;
-    var hours=Math.floor(diff/3600000);
-    var minutes=Math.floor((diff%3600000)/60000);
-    var seconds=Math.floor((diff%60000)/1000);
-    var timerEl=document.getElementById('countdown-timer');
-    if(timerEl){
-      timerEl.textContent=String(hours).padStart(2,'0')+':'+String(minutes).padStart(2,'0')+':'+String(seconds).padStart(2,'0');
-    }
-  }
-  setInterval(updateCountdown,1000);
-  updateCountdown();
-}catch(e){console.warn('Erro no contador:',e);}
-
-// Social Proof Dinâmico
-try{
-  var salesToday=Math.floor(Math.random()*15)+8;
-  var lastPurchase=Math.floor(Math.random()*10)+1;
-  var salesTodayEl=document.getElementById('sales-today');
-  var lastPurchaseEl=document.getElementById('last-purchase');
-  if(salesTodayEl)salesTodayEl.textContent=salesToday+' personas';
-  if(lastPurchaseEl)lastPurchaseEl.textContent=lastPurchase+' minutos';
-  
-  // Atualizar a cada 30 segundos
-  setInterval(function(){
-    if(Math.random()>0.7){
-      salesToday++;
-      if(salesTodayEl)salesTodayEl.textContent=salesToday+' personas';
-    }
-    lastPurchase=Math.floor(Math.random()*10)+1;
-    if(lastPurchaseEl)lastPurchaseEl.textContent=lastPurchase+' minutos';
-  },30000);
-}catch(e){console.warn('Erro no social proof:',e);}
-
-// Carrega Pixel apenas após interação significativa
-var pixelLoaded=false;
-function loadPixel(){
-  if(pixelLoaded)return;
-  try{
-    pixelLoaded=true;
-    !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.defer=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');
-    setTimeout(function(){
-      if(typeof fbq!=='undefined'){
-        fbq('init','1421388109491995');
-        fbq('track','PageView');
-      }
-    },500);
-  }catch(e){console.warn('Erro ao carregar Pixel:',e);}
-}
-// Carrega pixel apenas após scroll ou clique
-var pixelTriggered=false;
-function triggerPixel(){
-  if(pixelTriggered)return;
-  pixelTriggered=true;
-  setTimeout(loadPixel,500);
-}
-['scroll','click','touchstart'].forEach(function(e){
-  document.addEventListener(e,triggerPixel,{once:true,passive:true});
-});
-setTimeout(triggerPixel,3000);
-  
-  // CTA Sticky - Aparece imediatamente (1s OU 50px scroll)
-  var ctaShown=false;
-  function showStickyCTA(){
-    if(ctaShown)return;
-    try{
-      var cta=document.getElementById('sticky-cta');
-      if(cta){
-        cta.classList.remove('translate-y-full');
-        ctaShown=true;
-      }
-    }catch(e){console.warn('Erro ao mostrar CTA:',e);}
-  }
-  // Aparecer após 1 segundo
-  setTimeout(showStickyCTA,1000);
-  // OU aparecer após 50px de scroll
-  window.addEventListener('scroll',function(){
-    if(!ctaShown&&window.scrollY>50){
-      showStickyCTA();
-    }
-  },{passive:true});
-  
-  // Tracking de cliques - REMOVIDO para evitar duplicação
-  // O tracking já está no onclick do botão, não precisa adicionar aqui
-  
-  // Estilos adicionais carregados após renderização
-  (function(){
-    var style=document.createElement('style');
-    style.textContent='@keyframes pulse-ring{0%{transform:scale(0.8);box-shadow:0 0 0 0 rgba(255,255,255,0.7)}70%{transform:scale(1);box-shadow:0 0 0 10px rgba(255,255,255,0)}100%{transform:scale(0.8);box-shadow:0 0 0 0 rgba(255,255,255,0)}}.play-btn-pulse{animation:pulse-ring 2s infinite}@keyframes pulse-strong{0%{transform:scale(1);box-shadow:0 0 0 0 rgba(233,30,99,0.7)}50%{transform:scale(1.02);box-shadow:0 0 0 10px rgba(233,30,99,0)}100%{transform:scale(1);box-shadow:0 0 0 0 rgba(233,30,99,0)}}.btn-pulse-strong{animation:pulse-strong 2s infinite}body{min-height:max(884px,100dvh)}.scrollbar-hide::-webkit-scrollbar{display:none}.scrollbar-hide{-ms-overflow-style:none;scrollbar-width:none}';
-    document.head.appendChild(style);
-  })();
-</script>
 </body></html>
-<!-- Deploy: 2026-01-06 00:25:22 -->
