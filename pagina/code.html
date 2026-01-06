@@ -999,16 +999,8 @@ setTimeout(triggerPixel,3000);
     }
   },{passive:true});
   
-  // Tracking de cliques
-  try{
-    document.querySelectorAll('a[href*="pay.hotmart"]').forEach(function(link){
-      link.addEventListener('click',function(){
-        try{
-          if(typeof fbq!=='undefined')fbq('track','InitiateCheckout');
-        }catch(e){console.warn('Erro no tracking:',e);}
-      });
-    });
-  }catch(e){console.warn('Erro ao configurar tracking:',e);}
+  // Tracking de cliques - REMOVIDO para evitar duplicação
+  // O tracking já está no onclick do botão, não precisa adicionar aqui
   
   // Estilos adicionais carregados após renderização
   (function(){
@@ -1018,3 +1010,4 @@ setTimeout(triggerPixel,3000);
   })();
 </script>
 </body></html>
+<!-- Deploy: 2026-01-06 00:25:22 -->
